@@ -35,7 +35,8 @@
    width= "auto"
    
 			items="{
-				path: '/FuncionarioSet'
+				path: '/FuncionarioSet',
+                filters: [{path: 'Clinid', operator: 'EQ', value1: sObjectId}]
                 
                
                

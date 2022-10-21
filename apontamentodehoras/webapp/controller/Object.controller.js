@@ -7,12 +7,6 @@ sap.ui.define([
 ], function (BaseController, JSONModel, History, formatter, MessageToast) {
     "use strict";
 
-    var oTable = this.getView().byId("idProductsTable");
-    var custId = history.length;
-    var oFilters = new sap.ui.model.Filter("Clinid", "EQ", 1);
-    oTable.getBinding("items").filter(oFilters, "Application");
-
-  
     return BaseController.extend("apontamento.apontamentodehoras.controller.Object", {
 
         formatter: formatter,
@@ -156,7 +150,7 @@ sap.ui.define([
          */
         _onObjectMatched: function (oEvent) {
             var sObjectId = oEvent.getParameter("arguments").objectId;
-            this._bindView("/FuncionarioSet" + sObjectId);
+            this._bindView("/Cliente1Set" + sObjectId);
         },
 
         /**
