@@ -1,0 +1,79 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.Object"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        showFooter="true"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="Funcionários"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+           <Button text="Ler" type="Emphasized" press="onLer" />
+        </semantic:headerContent>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <l:VerticalLayout width="100%">
+   
+
+   <Table id="idProductsTable"
+   width= "auto"
+   
+			items="{
+				path: '/FuncionarioSet'
+                
+               
+               
+			}">
+			<columns>
+                    <Column >
+                        <Text text="Nome" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="ID" />
+                    </Column>
+                </columns>
+                
+		
+				<ColumnListItem
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{Nome}"/>
+                            <ObjectNumber
+                                unit="{Funcid}" />     
+                        </cells>
+                       
+				</ColumnListItem>
+		</Table>
+</l:VerticalLayout>
+
+    <semantic:footerCustomActions>
+    <Button type="Accept" text="Gravar" press="onGravar2"/>
+    <Button type="Reject" text="Cancelar" press="onCancelar"/>
+
+    </semantic:footerCustomActions>
+
+
+    </semantic:SemanticPage>
+
+   
+
+
+</mvc:View>

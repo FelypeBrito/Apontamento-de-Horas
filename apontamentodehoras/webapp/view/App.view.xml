@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.App"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc">
+
+	<IconTabBar
+		id="idIconTabBarNoIcons"
+        upperCase="true"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items >
+        
+			<IconTabFilter text="Cadastro de Atividade" key="key1">
+				<content >
+                 
+                    
+                </content>
+			</IconTabFilter>
+			<IconTabFilter text="Apontamento" key="key2">
+                <content>
+                    <Shell>
+                        <App
+                            id="app"
+                            busy="{appView>/busy}"
+                            busyIndicatorDelay="{appView>/delay}"/>
+                    </Shell>
+                </content>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+</mvc:View>
