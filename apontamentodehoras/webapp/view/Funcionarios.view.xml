@@ -1,0 +1,97 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.Funcionarios"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        showFooter="true"
+        toggleHeaderOnTitleClick="false"
+        busy="{funcionariosView>/busy}"
+        busyIndicatorDelay="{funcionariosView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="Horas Trabalhadas"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+        </semantic:headerContent>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <l:VerticalLayout width="100%">
+   
+
+   <Table id="idNoteTable"
+   width= "auto"
+   
+			items="{
+				path: '/HorasTrabalhadasSet'
+			}">
+			<columns>
+				<Column>
+					<Text text="Data" />
+				</Column>
+                <Column>
+					<Text text="Projeto" />
+				</Column>
+                <Column>
+					<Text text="Consultor" />
+				</Column>
+                <Column>
+					<Text text="Atividade" />
+				</Column>
+				<Column>
+					<Text text="Horário de entrada" />
+				</Column>
+
+				<Column>
+					<Text text="Horário de Saída" />
+				</Column>
+                <Column>
+					<Text text="Horas Trabalhadas" />
+				</Column>
+			</columns>
+				<ColumnListItem  >
+					<ObjectIdentifier
+                   
+						text="{Data}"/>
+                        <ObjectAttribute
+						text="{/ProjetoSet>/Nome}"/>
+                        <ObjectAttribute
+						text="{Nome}"/>
+					<ObjectAttribute
+						text="{Atividade}"/>
+                        <ObjectAttribute
+						text="{Hentrada}"/>
+                        <ObjectAttribute
+						text="{Hsaida}"/>
+					<ObjectAttribute
+						text="{Htotal}"/>
+				</ColumnListItem>
+		</Table>
+</l:VerticalLayout>
+
+    <semantic:footerCustomActions>
+    <Button type="Accept" text="Gravar" press="onGravar2"/>
+    <Button type="Reject" text="Cancelar" press="onCancelar"/>
+
+    </semantic:footerCustomActions>
+
+
+    </semantic:SemanticPage>
+
+   
+
+
+</mvc:View>
+
+  

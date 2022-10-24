@@ -115,7 +115,7 @@
           "target": ["create"]
         },
         {
-          "pattern": "funcionarios",
+          "pattern": "funcionarios/{objectId}",
           "name": "funcionarios",
           "target": [
             "funcionarios"
@@ -147,7 +147,7 @@
         "funcionarios": {
           "viewId": "funcionarios",
           "viewName": "Funcionarios",
-          "viewLevel": 2
+          "viewLevel": 3
         },
         "notFound": {
           "viewName": "NotFound",

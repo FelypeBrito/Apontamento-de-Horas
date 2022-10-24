@@ -10,7 +10,7 @@ sap.ui.define([
     return BaseController.extend("apontamento.apontamentodehoras.controller.Object", {
 
         formatter: formatter,
-        
+
 
         /* =========================================================== */
         /* lifecycle methods                                           */
@@ -30,7 +30,10 @@ sap.ui.define([
             });
             this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
             this.setModel(oViewModel, "objectView");
+
+
         },
+
         /* =========================================================== */
         /* event handlers                                              */
         /* =========================================================== */
@@ -99,27 +102,11 @@ sap.ui.define([
 
         },
 
-          onRead: function(){
-
-            var oModel = this.getView().getModel();
-            
-            oModel.read("/FuncionarioSet", {
-
-                urlParameters: {"$expand": "horastrabalhadas"},
-              
-                success: function (dados, resposta) {
-
-                    MessageToast.show("Atualizado com sucesso!");
-
-                },
-                error: function (oError) {
-
-                   MessageToast.show("Erro");
-           }})                
-
+        onPress : function (oEvent) {
+            // The source is the list item that got pressed
+            this._showObject(oEvent.getSource());
         },
 
-        
         /**
          * Event handler  for navigating back.
          * It there is a history entry we go one step back in the browser history
@@ -136,8 +123,6 @@ sap.ui.define([
             }
         },
 
-        
-
         /* =========================================================== */
         /* internal methods                                            */
         /* =========================================================== */
@@ -151,6 +136,26 @@ sap.ui.define([
         _onObjectMatched: function (oEvent) {
             var sObjectId = oEvent.getParameter("arguments").objectId;
             this._bindView("/Cliente1Set" + sObjectId);
+
+            //filtra os funcionarios a partir do cliente
+            var oView = this.getView();
+            var oTable = oView.byId("idProductsTable");
+            var oBinding = oTable.getBinding("items");
+
+            // apply filters 
+            var aFilters = [];
+            var convertValue = sObjectId.toString();
+            var vValue1 = convertValue.split("'");
+            var oFilter = new sap.ui.model.Filter("Clinid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+            aFilters.push(oFilter);
+
+            oBinding.filter(aFilters);
+        },
+
+        _showObject : function (oItem) {
+            this.getRouter().navTo("funcionarios", {
+                objectId: oItem.getBindingContext().getPath().substring("/FuncionarioSet".length)
+            });
         },
 
         /**
@@ -189,8 +194,8 @@ sap.ui.define([
 
             var oResourceBundle = this.getResourceBundle(),
                 oObject = oView.getBindingContext().getObject(),
-                sObjectId = oObject.Nome,
-                sObjectName = oObject.Cliente1Set;
+                sObjectId = oObject.ClienteID,
+                sObjectName = oObject.Nome;
 
             oViewModel.setProperty("/busy", false);
             oViewModel.setProperty("/shareSendEmailSubject",

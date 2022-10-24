@@ -35,11 +35,7 @@
    width= "auto"
    
 			items="{
-				path: '/FuncionarioSet',
-                filters: [{path: 'Clinid', operator: 'EQ', value1: sObjectId}]
-                
-               
-               
+				path: '/FuncionarioSet' 
 			}">
 			<columns>
                     <Column >
@@ -49,7 +45,6 @@
                         <Text text="ID" />
                     </Column>
                 </columns>
-                
 		
 				<ColumnListItem
                         type="Navigation"
