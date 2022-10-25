@@ -3,9 +3,10 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "../model/formatter",
     "sap/ui/core/routing/History",
-    "sap/m/MessageToast",
-    "sap/ui/core/UIComponent"
-], function (BaseController, JSONModel, formatter, History, MessageToast, UIComponent) {
+    "sap/ui/core/UIComponent",
+    "sap/ui/export/Spreadsheet",
+    "sap/ui/export/library"
+], function (BaseController, JSONModel, formatter, History, UIComponent,Spreadsheet, EdmType) {
 
     "use strict";
 
@@ -52,6 +53,74 @@ sap.ui.define([
                 oRouter.navTo("object", {}, true);
             }
         },
+
+        onExport : function () {
+            var oTable = this.getView().byId("idNoteTable"),
+                oRowBinding, aCols, oSettings, oSheet;
+                
+            oRowBinding = oTable.getBinding("items");
+            aCols = this.createColumnConfig();
+            
+            oSettings = {
+                workbook: {
+                    columns: aCols
+                    //hierarchyLevel: 'Level'
+                },
+                dataSource: oRowBinding,
+                fileName: "Horas Trabalhadas.xlsx"
+                //worker: false // We need to disable worker because we are using a MockServer as OData Service
+            };
+    
+            oSheet = new Spreadsheet(oSettings);
+            oSheet.build().finally(function() {
+                oSheet.destroy();
+            });
+    
+        },
+
+        createColumnConfig: function() {
+            var aCols = [];
+    
+            aCols.push({
+                label: 'Data',
+                property: "Data",
+                type: EdmType.String,
+            });
+    
+            aCols.push({
+                label: "Consultor",
+                property: "Nome",
+                type: EdmType.String,
+            });
+    
+            aCols.push({
+                label: "Atividade",
+                property: "Atividade",
+                type: EdmType.String
+            });
+
+            aCols.push({
+                label: "Horário de entrada",
+                property: "Hentrada",
+                type: EdmType.String
+            });
+    
+            aCols.push({
+                label: "Horário de Saída",
+                property: "Hsaida",
+                type: EdmType.String
+            });
+    
+            aCols.push({
+                label: "Horas Trabalhadas",
+                property: "Htotal",
+                type: EdmType.String
+            });
+    
+            return aCols;
+        },
+          
+        
 
         /**
          * Binds the view to the object path.

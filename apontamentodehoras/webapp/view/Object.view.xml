@@ -21,7 +21,6 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-           <Button text="Ler" type="Emphasized" press="onLer" />
         </semantic:headerContent>
 
         <semantic:sendEmailAction>

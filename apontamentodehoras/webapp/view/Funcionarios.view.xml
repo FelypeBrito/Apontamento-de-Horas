@@ -18,12 +18,16 @@
             <Title
                 text="Horas Trabalhadas"
                 level="H2"/>
+
         </semantic:titleHeading>
 
         <semantic:headerContent>
+           <Button  hAlign="End" text = "ExportarExcel" press = ".onExport"/>
+        
         </semantic:headerContent>
 
         <semantic:sendEmailAction>
+       
             <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
         </semantic:sendEmailAction>
 
@@ -79,13 +83,6 @@
 				</ColumnListItem>
 		</Table>
 </l:VerticalLayout>
-
-    <semantic:footerCustomActions>
-    <Button type="Accept" text="Gravar" press="onGravar2"/>
-    <Button type="Reject" text="Cancelar" press="onCancelar"/>
-
-    </semantic:footerCustomActions>
-
 
     </semantic:SemanticPage>
 
