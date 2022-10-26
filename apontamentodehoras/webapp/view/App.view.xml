@@ -26,8 +26,6 @@
                         <f:SimpleForm
                             editable="true"
                             layout="ResponsiveGridLayout"
-                            
-                        
                             labelSpanXL="3"
                             labelSpanL="3"
                             labelSpanM="3"
@@ -58,6 +56,7 @@
                                     id="TP1"
                                     displayFormat="HH:mm"
                                     change="handleChange2"
+                                    valueFormat="HH:mm"
                                     placeholder="--:--"
                                     class="sapUiSmallMarginBottom"
                                    />
@@ -66,13 +65,15 @@
                                     id="TP2"
                                     change="handleChange3"
                                     displayFormat="HH:mm"
+                                    valueFormat="HH:mm"
                                     placeholder="--:--"
                                     class="sapUiSmallMarginBottom"
                                    />
                             <Label text="Data" labelFor="DP3"/>
                             <DatePicker
                                 id="DP3"
-                                displayFormat="short"
+                                displayFormat="dd/MM/yyyy" 
+                                valueFormat="dd/MM/yyyy"
                                 change="handleChange"
                                 class="sapUiSmallMarginBottom"/>  
                         </f:SimpleForm>

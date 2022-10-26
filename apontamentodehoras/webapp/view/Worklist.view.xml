@@ -22,8 +22,6 @@
             <Table
                 id="table"
                 width="auto"
-    
-        
                 items="{
                     path: '/Cliente1Set',
                     sorter: {
@@ -40,10 +38,7 @@
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title/>
-                        <ToolbarSpacer />
-                        <Button text="Apontar" type="Emphasized" press="onCriarApontamento" />
-                        
-                        
+                        <ToolbarSpacer />                        
                         <SearchField
                             id="searchField"
                             tooltip="{i18n>worklistSearchTooltip}"

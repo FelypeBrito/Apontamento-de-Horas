@@ -9,7 +9,6 @@
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
-        showFooter="true"
         toggleHeaderOnTitleClick="false"
         busy="{funcionariosView>/busy}"
         busyIndicatorDelay="{funcionariosView>/delay}">
@@ -22,7 +21,7 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-           <Button  hAlign="End" text = "ExportarExcel" press = ".onExport"/>
+           <Button  text = "ExportarExcel" press = ".onExport"/>
         
         </semantic:headerContent>
 
@@ -33,7 +32,6 @@
 
         <l:VerticalLayout width="100%">
    
-
    <Table id="idNoteTable"
    width= "auto"
    

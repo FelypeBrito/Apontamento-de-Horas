@@ -9,7 +9,6 @@
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
-        showFooter="true"
         toggleHeaderOnTitleClick="false"
         busy="{objectView>/busy}"
         busyIndicatorDelay="{objectView>/delay}">
@@ -31,8 +30,7 @@
    
 
    <Table id="idProductsTable"
-   width= "auto"
-   
+            width= "auto"
 			items="{
 				path: '/FuncionarioSet' 
 			}">
@@ -58,13 +56,6 @@
 				</ColumnListItem>
 		</Table>
 </l:VerticalLayout>
-
-    <semantic:footerCustomActions>
-    <Button type="Accept" text="Gravar" press="onGravar2"/>
-    <Button type="Reject" text="Cancelar" press="onCancelar"/>
-
-    </semantic:footerCustomActions>
-
 
     </semantic:SemanticPage>
 
