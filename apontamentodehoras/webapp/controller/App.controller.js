@@ -68,6 +68,28 @@ sap.ui.define([
             });
         },
 
+        onLoginTap: function () {
+            var oModel = this.getModel();
+         
+            var dados = {
+                Email: this.getView().byId("email").getValue(),
+                Senha: this.getView().byId("pasw").getValue(),
+                
+            };
+           MessageToast.show("E-mail: " + dados.Email + " Password: " + dados.Senha);
+
+            oModel.read("/FuncionariosSet",dados,  {
+                success: function (oDados, resposta) {
+                    
+                }.bind(this),
+
+                error: function (oError) {
+                    var erro;
+                    erro = JSON.parse(oError.responseText);
+                }.bind(this),
+            });
+        },
+
         handleChange: function (oEvent) {
             var oDP = oEvent.getSource(),
                 sValue = oEvent.getParameter("value");

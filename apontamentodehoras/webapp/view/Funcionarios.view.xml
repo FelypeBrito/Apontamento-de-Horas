@@ -43,9 +43,6 @@
 					<Text text="Data" />
 				</Column>
                 <Column>
-					<Text text="Projeto" />
-				</Column>
-                <Column>
 					<Text text="Consultor" />
 				</Column>
                 <Column>
@@ -66,8 +63,6 @@
 					<ObjectIdentifier
                    
 						text="{Data}"/>
-                        <ObjectAttribute
-						text="{/ProjetoSet>/Nome}"/>
                         <ObjectAttribute
 						text="{Nome}"/>
 					<ObjectAttribute

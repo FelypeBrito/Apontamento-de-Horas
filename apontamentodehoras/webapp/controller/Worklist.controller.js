@@ -115,7 +115,7 @@ sap.ui.define([
         },
 
 
-        onClienteDelete(oEvent){
+        /*onClienteDelete(oEvent){
             var oItem = oEvent.getParameter("listItem");
             var sPath = oItem.getBindingContext().getPath();
 
@@ -131,12 +131,8 @@ sap.ui.define([
 
             });
 
-        },
+        },*/
 
-        onCriarApontamento: function (oEvent) {
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("create", {});
-            },
 
 
         /* =========================================================== */

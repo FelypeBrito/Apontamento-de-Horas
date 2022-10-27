@@ -38,7 +38,8 @@
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title/>
-                        <ToolbarSpacer />                        
+                        <ToolbarSpacer />
+                                             
                         <SearchField
                             id="searchField"
                             tooltip="{i18n>worklistSearchTooltip}"

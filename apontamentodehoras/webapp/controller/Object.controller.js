@@ -37,71 +37,7 @@ sap.ui.define([
         /* =========================================================== */
         /* event handlers                                              */
         /* =========================================================== */
-        onGravar: function () {
-            var oModel = this.getView();
-
-            var path = this.getView().getBindingContext.getPath();
-
-            var obj = {
-                Nome: this.byid("inputNome").getValue(),
-            }
-
-            //CRUD
-            oModel.update(path, obj, {
-                sucess: function (ODados, resposta) {
-                    debugger
-
-                },
-                error: function (oError) {
-
-                }
-            })
-
-        },
-
-        onGravar2: function () {
-
-            var oModel = this.getView().getModel();
-            // verifica se tem dados
-            if (oModel.hasPendingChanges()) {
-                MessageToast.show("Tem dados");
-            } else {
-                MessageToast.show("Sem dados para Gravar");
-                return;
-
-            };
-
-            oModel.submitChanges({
-
-                success: function (dados, resposta) {
-
-                    MessageToast.show("Atualizado com sucesso!");
-
-                },
-                error: function (oError) {
-
-                    MessageToast.show("Erro")
-
-                }
-            });
-
-
-        },
-
-        onCancelar: function (oEvent) {
-
-            var m = this.getView().getModel();
-
-            if (!m.hasPendingChanges()) {
-                MessageToast.show("Sem mudanças para cancelar");
-                return;
-            }
-
-            m.resetChanges();
-
-
-        },
-
+       
         onPress : function (oEvent) {
             // The source is the list item that got pressed
             this._showObject(oEvent.getSource());
