@@ -104,7 +104,7 @@
             <IconTabFilter text="Login" key="key3">
                 <Shell>
                     <App>
-                        <Page title="Login Form">
+                        <Page title="Login Form" id= "login">
                             <content>
                                 <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
                                     <items>

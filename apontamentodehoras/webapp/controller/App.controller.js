@@ -76,10 +76,17 @@ sap.ui.define([
                 Senha: this.getView().byId("pasw").getValue(),
                 
             };
-           MessageToast.show("E-mail: " + dados.Email + " Password: " + dados.Senha);
+            MessageToast.show("E-mail: " + dados.Email + " Password: " + dados.Senha);
+         
 
             oModel.read("/FuncionariosSet",dados,  {
-                success: function (oDados, resposta) {
+                method: "GET",
+                success: function (resposta) {
+
+                    MessageToast.show("E-mail: " + oDados.Email + " Password: " + resposta.Senha);
+                    MessageToast.show("ID: " + resposta.Funcid);
+                    MessageToast.show("ID: " + "{Funcid}");
+
                     
                 }.bind(this),
 
@@ -89,6 +96,9 @@ sap.ui.define([
                 }.bind(this),
             });
         },
+
+     
+
 
         handleChange: function (oEvent) {
             var oDP = oEvent.getSource(),
