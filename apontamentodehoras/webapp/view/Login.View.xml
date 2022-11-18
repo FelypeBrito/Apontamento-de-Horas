@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.App"
+    controllerName="apontamento.apontamentodehoras.controller.Login"
     displayBlock="true"
     xmlns="sap.m"
     height="100%"
@@ -13,7 +13,7 @@
         <content>
             <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
                 <items>
-                    <Input id="email" placeholder="E-mail" />
+                    <Input id="id" placeholder="ID" />
                     <Input id="pasw" placeholder="Password" type="Password" />
                     <Button width="12rem" text="Login" type="Emphasized" press="onLoginTap" />
                 </items>
@@ -22,10 +22,10 @@
         <footer>
             <Bar>
                 <contentLeft>
-                    <Text text="techippo" />
+                    <Text text="Infinitfy" />
                 </contentLeft>
                 <contentRight>
-                    <Text text="myLogin" />
+                    <Text text="v1" />
                 </contentRight>
             </Bar>
         </footer>

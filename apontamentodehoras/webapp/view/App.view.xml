@@ -101,33 +101,7 @@
                     </Shell>
                 </content>
 			</IconTabFilter >
-            <IconTabFilter text="Login" key="key3">
-                <Shell>
-                    <App>
-                        <Page title="Login Form" id= "login">
-                            <content>
-                                <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
-                                    <items>
-                                        <Input id="email" placeholder="E-mail" />
-                                        <Input id="pasw" placeholder="Password" type="Password" />
-                                        <Button width="12rem" text="Login" type="Emphasized" press="onLoginTap" />
-                                    </items>
-                                </VBox>
-                            </content>
-                            <footer>
-                                <Bar>
-                                    <contentLeft>
-                                        <Text text="techippo" />
-                                    </contentLeft>
-                                    <contentRight>
-                                        <Text text="myLogin" />
-                                    </contentRight>
-                                </Bar>
-                            </footer>
-                        </Page>
-                    </App>
-                </Shell>
-            </IconTabFilter>
+            
 		</items>
 	</IconTabBar>
 </mvc:View>

@@ -14,20 +14,38 @@ sap.ui.define([
 
         formatter: formatter,
 
+        onInit: function () {
+            // apply content density mode to root view
+            this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+            // create model
 
-        onLoginTap: function () {
+        },
+
+        onLoginTap: function (oEvent) {
             var oModel = this.getModel();
-         
-            var dados = {
-                Email: this.getView().byId("email").getValue(),
-                Senha: this.getView().byId("pasw").getValue(),
-                
-            };
-            sap.m.MessageToast.show("User Id: " + email + " Password: " + pasw);
 
-            oModel.read("/FuncionariosSet",dados,  {
+            var dados = {
+                Funcid: this.getView().byId("id").getValue(),
+                Senha: this.getView().byId("pasw").getValue(),
+
+            };
+
+
+            oModel.read("/FuncionarioSet('" + dados.Funcid + "')", {
+                //method: "GET",
                 success: function (oDados, resposta) {
-                    
+
+                    if (oDados.Funcid == dados.Funcid && oDados.Senha == dados.Senha) {
+
+                        MessageToast.show("Nome: " + oDados.Nome);
+                      
+                        router.navTo("app");
+
+                        
+
+
+                    }
+
                 }.bind(this),
 
                 error: function (oError) {
@@ -37,6 +55,11 @@ sap.ui.define([
             });
         },
 
+        _showObject : function (oItem) {
+            this.getRouter().navTo("app", {
+                objectId: oItem.getBindingContext().getPath().substring("/Cliente1Set".length)
+            });
+        },
 
 
 

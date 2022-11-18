@@ -68,36 +68,7 @@ sap.ui.define([
             });
         },
 
-        onLoginTap: function () {
-            var oModel = this.getModel();
-         
-            var dados = {
-                Email: this.getView().byId("email").getValue(),
-                Senha: this.getView().byId("pasw").getValue(),
-                
-            };
-            MessageToast.show("E-mail: " + dados.Email + " Password: " + dados.Senha);
-         
 
-            oModel.read("/FuncionariosSet",dados,  {
-                method: "GET",
-                success: function (resposta) {
-
-                    MessageToast.show("E-mail: " + oDados.Email + " Password: " + resposta.Senha);
-                    MessageToast.show("ID: " + resposta.Funcid);
-                    MessageToast.show("ID: " + "{Funcid}");
-
-                    
-                }.bind(this),
-
-                error: function (oError) {
-                    var erro;
-                    erro = JSON.parse(oError.responseText);
-                }.bind(this),
-            });
-        },
-
-     
 
 
         handleChange: function (oEvent) {

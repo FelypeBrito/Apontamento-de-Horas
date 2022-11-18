@@ -95,6 +95,24 @@
         "async": true
       },
       "routes": [
+
+        {
+          "pattern": "",
+          "name": "login",
+          "target": [
+            "login"
+          ]
+        },
+
+        {
+          "pattern": "Apontamento",
+          "name": "app",
+          "target": [
+            "app"
+          ]
+        },
+
+       
         {
           "pattern": "",
           "name": "worklist",
@@ -103,7 +121,7 @@
           ]
         },
         {
-          "pattern": "Cliente/{objectId}",
+          "pattern": "cliente/{objectId}",
           "name": "object",
           "target": [
             "object"
@@ -112,7 +130,9 @@
         {
           "pattern": "create",
           "name": "create",
-          "target": ["create"]
+          "target": [
+            "create"
+          ]
         },
         {
           "pattern": "funcionarios/{objectId}",
@@ -123,10 +143,27 @@
         }
       ],
       "targets": {
+
+        "login": {
+          "viewName": "Login",
+          "viewId": "login",
+          "viewLevel": 1,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+        "app": {
+          "viewName": "App",
+          "viewId": "app",
+          "viewLevel": 2,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+        
+
         "worklist": {
           "viewName": "Worklist",
           "viewId": "worklist",
-          "viewLevel": 1,
+          "viewLevel": 2,
           "title": "{i18n>worklistViewTitle}"
         },
         "object": {
@@ -156,7 +193,7 @@
       }
     },
     "rootView": {
-      "viewName": "apontamento.apontamentodehoras.view.App",
+      "viewName": "apontamento.apontamentodehoras.view.Login",
       "type": "XML",
       "async": true,
       "id": "app"
