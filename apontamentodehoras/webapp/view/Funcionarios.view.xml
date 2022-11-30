@@ -21,7 +21,7 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-           <Button  text = "ExportarExcel" press = ".onExport"/>
+           <Button  text = "Exportar Excel" press = ".onExport"/>
         
         </semantic:headerContent>
 

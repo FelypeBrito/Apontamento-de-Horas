@@ -38,12 +38,8 @@ sap.ui.define([
                     if (oDados.Funcid == dados.Funcid && oDados.Senha == dados.Senha) {
 
                         MessageToast.show("Nome: " + oDados.Nome);
-                      
-                        router.navTo("app");
-
-                        
-
-
+                        var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                        oRouter.navTo("home", {});
                     }
 
                 }.bind(this),
@@ -55,16 +51,11 @@ sap.ui.define([
             });
         },
 
-        _showObject : function (oItem) {
+        _showObject: function (oItem) {
             this.getRouter().navTo("app", {
                 objectId: oItem.getBindingContext().getPath().substring("/Cliente1Set".length)
             });
         },
-
-
-
-
-
 
     });
 },

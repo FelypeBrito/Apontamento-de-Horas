@@ -105,10 +105,18 @@
         },
 
         {
-          "pattern": "Apontamento",
-          "name": "app",
+          "pattern": "Home",
+          "name": "home",
           "target": [
-            "app"
+            "home"
+          ]
+        },
+
+        {
+          "pattern": "Apontamento",
+          "name": "apontamento",
+          "target": [
+            "apontamento"
           ]
         },
 
@@ -151,10 +159,17 @@
           "title": "{i18n>worklistViewTitle}"
         }, 
 
-        "app": {
-          "viewName": "App",
-          "viewId": "app",
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
           "viewLevel": 2,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+        "apontamento": {
+          "viewName": "Apontamento",
+          "viewId": "apontamento",
+          "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
         }, 
 
@@ -163,7 +178,7 @@
         "worklist": {
           "viewName": "Worklist",
           "viewId": "worklist",
-          "viewLevel": 2,
+          "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
         },
         "object": {
@@ -193,7 +208,7 @@
       }
     },
     "rootView": {
-      "viewName": "apontamento.apontamentodehoras.view.Login",
+      "viewName": "apontamento.apontamentodehoras.view.App",
       "type": "XML",
       "async": true,
       "id": "app"

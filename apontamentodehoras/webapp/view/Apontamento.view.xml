@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.Apontamento"
+    displayBlock="true"
+    xmlns="sap.m"
+    height="100%"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+     xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+
+                    <Page
+                        title="Criar novo Apontamento"
+                        floatingFooter="true"
+                        >
+
+                        <f:SimpleForm
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false">
+
+                            <Label text="ID Cliente" />
+                            <Input valueLiveUpdate="true" id="inpCliente" 
+                            value=""
+                            maxLength="40"/>
+                            
+                            <Label text="ID Funcionario" />
+                            <Input value="" id="inpFuncid"/>
+                            <Label text="Atividade" />
+                            <Input value="" id="inpAtividade"/>
+                            <Label text="Descrição" />
+                            <Input value="" id="inpDescricao"/>
+                           <Label text="Hora Inicial" labelFor = "TP1" />
+                            <TimePicker
+                                    id="TP1"
+                                    displayFormat="HH:mm"
+                                    change="handleChange2"
+                                    valueFormat="HH:mm"
+                                    placeholder="--:--"
+                                    class="sapUiSmallMarginBottom"
+                                   />
+                            <Label text="Hora Final" labelFor ="TP2" />
+                            <TimePicker
+                                    id="TP2"
+                                    change="handleChange3"
+                                    displayFormat="HH:mm"
+                                    valueFormat="HH:mm"
+                                    placeholder="--:--"
+                                    class="sapUiSmallMarginBottom"
+                                   />
+                            <Label text="Data" labelFor="DP3"/>
+                            <DatePicker
+                                id="DP3"
+                                displayFormat="dd/mm/yyyy" 
+                                valueFormat="dd/MM/yyyy"
+                                change="handleChange"
+                                class="sapUiSmallMarginBottom"/>  
+                        </f:SimpleForm>
+                        
+                       <Toolbar>
+                            <Button  text="Gravar" press="onGravar" />
+                            <Button  text="Cancelar" press="onCancelar " />
+			            </Toolbar>
+                    </Page>
+</mvc:View>
