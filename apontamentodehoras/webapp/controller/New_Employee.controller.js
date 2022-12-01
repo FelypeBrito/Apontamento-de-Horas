@@ -21,7 +21,7 @@ sap.ui.define([
     var CalendarDayType = UnifiedLibrary.CalendarDayType,
         ValueState = CoreLibrary.ValueState;
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.Apontamento", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.New_Employee", {
 
         formatter: formatter,
 
@@ -106,4 +106,3 @@ sap.ui.define([
 },
 
 );
-

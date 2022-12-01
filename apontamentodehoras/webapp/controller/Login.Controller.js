@@ -10,7 +10,7 @@ sap.ui.define([
     "use strict";
 
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.App", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.Login", {
 
         formatter: formatter,
 
@@ -37,7 +37,7 @@ sap.ui.define([
 
                     if (oDados.Funcid == dados.Funcid && oDados.Senha == dados.Senha) {
 
-                        MessageToast.show("Nome: " + oDados.Nome);
+                        MessageToast.show("Login realizado com sucesso!");
                         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                         oRouter.navTo("home", {});
                     }
@@ -47,6 +47,7 @@ sap.ui.define([
                 error: function (oError) {
                     var erro;
                     erro = JSON.parse(oError.responseText);
+                    MessageToast.show("Dados incorreto ou usuário não cadastrado!");
                 }.bind(this),
             });
         },

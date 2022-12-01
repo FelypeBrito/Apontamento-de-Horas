@@ -7,7 +7,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
     "use strict";
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.Worklist", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.Home", {
 
         formatter: formatter,
 
@@ -79,6 +79,19 @@ sap.ui.define([
             oRouter.navTo("apontamento", {})
             
         },
+
+        onCliente: function(oEvent){
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
+            oRouter.navTo("newclient", {})
+            
+        },
+
+        onFuncionário: function(oEvent){
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
+            oRouter.navTo("newemployee", {})
+            
+        },
+
 
         /**
          * Event handler for navigating back.

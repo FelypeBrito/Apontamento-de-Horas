@@ -17,10 +17,17 @@
                 level="H2"/>
         </semantic:titleHeading>
 
+
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"/>
-        
+
+           <Button  text = "Novo Cliente" press = ".onCliente"/>
+
+           <Button  text = "Novo Funcionário" press = ".onFuncionário"/>
+           
         </semantic:headerContent>
+
+       
 
         <semantic:content>
 

@@ -1,0 +1,57 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.Apontamento"
+    displayBlock="true"
+    xmlns="sap.m"
+    height="100%"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+     xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+
+                    <Page
+                        title="Inserir novo Funcionário"
+                        floatingFooter="true"
+                        >
+
+                        <f:SimpleForm
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false">
+
+                            <Label text="ID Cliente" />
+                            <Input valueLiveUpdate="true" id="inpClinid" 
+                            value=""
+                            maxLength="40"/>
+                            
+                            <Label text="Nome" />
+                            <Input value="" id="inpNome"/>
+
+                            <Label text="Telefone" />
+                            <Input value="" id="inpTelefone"/>
+
+                            <Label text="E-mail" />
+                            <Input value="" id="inpEmail"/>
+
+                             <Label text="Senha" />
+                            <Input value="" id="inpSenha"/>
+                           
+                        </f:SimpleForm>
+                        
+                       <Toolbar>
+                            <Button  text="Gravar" press="onGravar" />
+                            <Button  text="Cancelar" press="onCancelar " />
+			            </Toolbar>
+                    </Page>
+</mvc:View>

@@ -120,6 +120,22 @@
           ]
         },
 
+        {
+          "pattern": "newClient",
+          "name": "newclient",
+          "target": [
+            "newclient"
+          ]
+        },
+
+        {
+          "pattern": "newEmployee",
+          "name": "newemployee",
+          "target": [
+            "newemployee"
+          ]
+        },
+
        
         {
           "pattern": "",
@@ -166,15 +182,27 @@
           "title": "{i18n>worklistViewTitle}"
         }, 
 
+        "newclient": {
+          "viewName": "New_Client",
+          "viewId": "newclient",
+          "viewLevel": 3,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+        "newemployee": {
+          "viewName": "New_Employee",
+          "viewId": "newemployee",
+          "viewLevel": 3,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
         "apontamento": {
           "viewName": "Apontamento",
           "viewId": "apontamento",
           "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
-        }, 
-
+        },
         
-
         "worklist": {
           "viewName": "Worklist",
           "viewId": "worklist",

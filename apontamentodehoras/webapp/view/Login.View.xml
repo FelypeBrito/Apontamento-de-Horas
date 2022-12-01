@@ -9,11 +9,11 @@
     xmlns:mvc="sap.ui.core.mvc"
     >
     
-<Shell backgroundImage="myImageSrc" backgroundOpacity="1"
+<Shell 
 >
 
 	<App>
-    <Page title="Login Form" >
+    <Page title="Login" >
         <content>
             <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
                 <items>

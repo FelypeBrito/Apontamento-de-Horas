@@ -1,0 +1,46 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.Apontamento"
+    displayBlock="true"
+    xmlns="sap.m"
+    height="100%"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+     xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+
+                    <Page
+                        title="Inserir novo Cliente"
+                        floatingFooter="true"
+                        >
+
+                        <f:SimpleForm
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false">
+
+                            <Label text="Nome" />
+                            <Input valueLiveUpdate="true" id="inpNome" 
+                            value=""
+                            maxLength="40"/>
+                            
+                           
+                        </f:SimpleForm>
+                        
+                       <Toolbar>
+                            <Button  text="Gravar" press="onGravar" />
+                            <Button  text="Cancelar" press="onCancelar " />
+			            </Toolbar>
+                    </Page>
+</mvc:View>

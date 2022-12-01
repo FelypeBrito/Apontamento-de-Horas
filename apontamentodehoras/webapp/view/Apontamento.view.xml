@@ -62,7 +62,7 @@
                             <Label text="Data" labelFor="DP3"/>
                             <DatePicker
                                 id="DP3"
-                                displayFormat="dd/mm/yyyy" 
+                                displayFormat="dd/MM/yyyy" 
                                 valueFormat="dd/MM/yyyy"
                                 change="handleChange"
                                 class="sapUiSmallMarginBottom"/>  
