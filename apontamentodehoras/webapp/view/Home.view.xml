@@ -19,11 +19,11 @@
 
 
         <semantic:headerContent>
-           <Button  text = "Apontar" press = ".onApontar"/>
+           <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
 
-           <Button  text = "Novo Cliente" press = ".onCliente"/>
+           <Button  text = "Novo Cliente" press = ".onCliente"  class="sapUiSmallMarginEnd"/>
 
-           <Button  text = "Novo Funcionário" press = ".onFuncionario"/>
+           <Button  text = "Novo Funcionário" press = ".onFuncionario"  class="sapUiSmallMarginEnd"/>
            
         </semantic:headerContent>
 
@@ -86,7 +86,7 @@
                             <ObjectIdentifier
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{ClienteID}" />     
+                                unit="{Clinid}" />     
                         </cells>
                         
                     </ColumnListItem>
