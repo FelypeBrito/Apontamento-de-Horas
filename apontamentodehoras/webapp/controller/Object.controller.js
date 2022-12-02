@@ -59,6 +59,25 @@ sap.ui.define([
             }
         },
 
+        onFuncionarioDelete(oEvent){
+            var oItem = oEvent.getParameter("listItem");
+            var sPath = oItem.getBindingContext().getPath();
+
+            var oModel = this.getView().getModel();
+
+            oModel.remove(sPath,  {
+                success: function(){
+                    sap.m.MessageToast.show('Funcionário eliminado com sucesso.');               
+                }.bind(this),
+                error: function(e){
+                    console.error(e);
+                }.bind(this),
+
+            });
+
+        },
+
+
         /* =========================================================== */
         /* internal methods                                            */
         /* =========================================================== */
@@ -89,7 +108,7 @@ sap.ui.define([
         },
 
         _showObject : function (oItem) {
-            this.getRouter().navTo("funcionarios", {
+            this.getRouter().navTo("horas", {
                 objectId: oItem.getBindingContext().getPath().substring("/FuncionarioSet".length)
             });
         },

@@ -30,6 +30,8 @@
    
 
    <Table id="idProductsTable"
+            mode = "Delete"
+            delete = "onFuncionarioDelete"
             width= "auto"
 			items="{
 				path: '/FuncionarioSet' 

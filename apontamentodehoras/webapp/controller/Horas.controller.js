@@ -10,7 +10,7 @@ sap.ui.define([
 
     "use strict";
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.Funcionarios", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.Horas", {
 
         formatter: formatter,
 
@@ -22,8 +22,8 @@ sap.ui.define([
                 busy: true,
                 delay: 0
             });
-            this.getRouter().getRoute("funcionarios").attachPatternMatched(this._onFuncionarioMatched, this);
-            this.setModel(oViewModel, "funcionariosView");
+            this.getRouter().getRoute("horas").attachPatternMatched(this._onFuncionarioMatched, this);
+            this.setModel(oViewModel, "horasView");
 
 
         },
@@ -36,8 +36,8 @@ sap.ui.define([
                 busy: true,
                 delay: 0
             });
-            this.getRouter().getRoute("funcionarios").attachPatternMatched(this._onFuncionarioMatched, this);
-            this.setModel(oViewModel, "funcionariosView");
+            this.getRouter().getRoute("horas").attachPatternMatched(this._onFuncionarioMatched, this);
+            this.setModel(oViewModel, "horasView");
 
 
         },
@@ -119,6 +119,25 @@ sap.ui.define([
     
             return aCols;
         },
+
+        onHorasDelete(oEvent){
+            var oItem = oEvent.getParameter("listItem");
+            var sPath = oItem.getBindingContext().getPath();
+
+            var oModel = this.getView().getModel();
+
+            oModel.remove(sPath,  {
+                success: function(){
+                    sap.m.MessageToast.show('Apontamento eliminado com sucesso.');               
+                }.bind(this),
+                error: function(e){
+                    console.error(e);
+                }.bind(this),
+
+            });
+
+        },
+
           
         
 
@@ -149,7 +168,7 @@ sap.ui.define([
         },
 
         _bindView: function (sObjectPath) {
-            var oViewModel = this.getModel("funcionariosView");
+            var oViewModel = this.getModel("horasView");
 
             this.getView().bindElement({
                 path: sObjectPath,
@@ -167,7 +186,7 @@ sap.ui.define([
 
         _onBindingChange: function () {
             var oView = this.getView(),
-                oViewModel = this.getModel("funcionariosView"),
+                oViewModel = this.getModel("horasView"),
                 oElementBinding = oView.getElementBinding();
 
             // No data for the binding

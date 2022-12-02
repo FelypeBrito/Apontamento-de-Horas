@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.Funcionarios"
+    controllerName="apontamento.apontamentodehoras.controller.Horas"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
@@ -32,9 +32,11 @@
 
         <l:VerticalLayout width="100%">
    
-   <Table id="idNoteTable"
-   width= "auto"
-   
+        <Table 
+            id="idNoteTable"
+            width= "auto"
+            mode = "Delete"
+            delete = "onHorasDelete"
 			items="{
 				path: '/HorasTrabalhadasSet'
 			}">

@@ -159,10 +159,10 @@
           ]
         },
         {
-          "pattern": "funcionarios/{objectId}",
-          "name": "funcionarios",
+          "pattern": "horas/{objectId}",
+          "name": "horas",
           "target": [
-            "funcionarios"
+            "horas"
           ]
         }
       ],
@@ -183,14 +183,14 @@
         }, 
 
         "newclient": {
-          "viewName": "New_Client",
+          "viewName": "NewClient",
           "viewId": "newclient",
           "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
         }, 
 
         "newemployee": {
-          "viewName": "New_Employee",
+          "viewName": "NewEmployee",
           "viewId": "newemployee",
           "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
@@ -224,9 +224,9 @@
           "viewName": "Create",
           "viewLevel": 2
         },
-        "funcionarios": {
-          "viewId": "funcionarios",
-          "viewName": "Funcionarios",
+        "horas": {
+          "viewId": "horas",
+          "viewName": "Horas",
           "viewLevel": 3
         },
         "notFound": {

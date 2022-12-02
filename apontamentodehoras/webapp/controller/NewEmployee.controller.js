@@ -1,3 +1,7 @@
+var sdata;
+var sHinicial;
+var sHfinal;
+var sHtotal;
 
 sap.ui.define([
     "./BaseController",
@@ -17,7 +21,7 @@ sap.ui.define([
     var CalendarDayType = UnifiedLibrary.CalendarDayType,
         ValueState = CoreLibrary.ValueState;
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.New_Client", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.NewEmployee", {
 
         formatter: formatter,
 
@@ -34,15 +38,21 @@ sap.ui.define([
         onGravar: function () {
             var oModel = this.getModel();
 
+
             var dados = {
+                Clinid: this.byId("inpClinid").getValue(), 
                 Nome: this.byId("inpNome").getValue(),
+                Telefone: this.byId("inpNome").getValue(),
+                Email: this.byId("inpEmail").getValue(),
+                Senha: this.byId("inpSenha").getValue(),
+                
             };
 
-            oModel.create("/Cliente1Set", dados, {
+            oModel.create("/FuncionarioSet", dados, {
                 success: function (oDados, resposta) {
-                    MessageToast.show('Horas apontadas com sucesso!!.');
+                    MessageToast.show('/Funcionario criado com sucesso!!.');
                     var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                    oRouter.navTo("home", {});
+                        oRouter.navTo("home", {});
                 }.bind(this),
                 error: function (oError) {
                     debugger
@@ -50,8 +60,8 @@ sap.ui.define([
             });
         },
 
+
     });
 },
 
 );
-

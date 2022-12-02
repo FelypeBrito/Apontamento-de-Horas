@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.Apontamento"
+    controllerName="apontamento.apontamentodehoras.controller.NewEmployee"
     displayBlock="true"
     xmlns="sap.m"
     height="100%"
@@ -45,7 +45,7 @@
                             <Input value="" id="inpEmail"/>
 
                              <Label text="Senha" />
-                            <Input value="" id="inpSenha"/>
+                            <Input value="" id="inpSenha"  type="Password" />
                            
                         </f:SimpleForm>
                         

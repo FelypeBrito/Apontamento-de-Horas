@@ -86,7 +86,7 @@ sap.ui.define([
             
         },
 
-        onFuncionário: function(oEvent){
+        onFuncionario: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
             oRouter.navTo("newemployee", {})
             
@@ -134,7 +134,7 @@ sap.ui.define([
         },
 
 
-        /*onClienteDelete(oEvent){
+        onClienteDelete(oEvent){
             var oItem = oEvent.getParameter("listItem");
             var sPath = oItem.getBindingContext().getPath();
 
@@ -150,7 +150,7 @@ sap.ui.define([
 
             });
 
-        },*/
+        },
 
 
 

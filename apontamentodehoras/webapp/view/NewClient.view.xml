@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.Apontamento"
+    controllerName="apontamento.apontamentodehoras.controller.NewClient"
     displayBlock="true"
     xmlns="sap.m"
     height="100%"
