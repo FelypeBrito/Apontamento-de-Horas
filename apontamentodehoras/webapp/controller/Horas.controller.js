@@ -22,7 +22,7 @@ sap.ui.define([
                 busy: true,
                 delay: 0
             });
-            this.getRouter().getRoute("horas").attachPatternMatched(this._onFuncionarioMatched, this);
+            this.getRouter().getRoute("horas").attachPatternMatched(this._onHorasMatched, this);
             this.setModel(oViewModel, "horasView");
 
 
@@ -36,7 +36,7 @@ sap.ui.define([
                 busy: true,
                 delay: 0
             });
-            this.getRouter().getRoute("horas").attachPatternMatched(this._onFuncionarioMatched, this);
+            this.getRouter().getRoute("horas").attachPatternMatched(this._onHorasMatched, this);
             this.setModel(oViewModel, "horasView");
 
 
@@ -148,9 +148,9 @@ sap.ui.define([
          * @private
          */
 
-         _onFuncionarioMatched: function (oEvent) {
-            var sFuncionariostId = oEvent.getParameter("arguments").objectId;
-            this._bindView("/FuncionarioSet" + sFuncionariostId);
+         _onHorasMatched: function (oEvent) {
+            var sHorastId = oEvent.getParameter("arguments").objectId;
+            this._bindView("/FuncionarioSet" + sHorastId );
 
             //filtra os funcionarios a partir do cliente
             var oView = this.getView();
@@ -159,7 +159,7 @@ sap.ui.define([
 
             // apply filters 
             var aFilters = [];
-            var convertValue = sFuncionariostId.toString();
+            var convertValue = sHorastId .toString();
             var vValue1 = convertValue.split("'");
             var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
             aFilters.push(oFilter);

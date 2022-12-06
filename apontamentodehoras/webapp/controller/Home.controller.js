@@ -1,3 +1,5 @@
+var sID;
+var dados;
 sap.ui.define([
     "./BaseController",
     "sap/ui/model/json/JSONModel",
@@ -27,14 +29,15 @@ sap.ui.define([
 
             // Model used to manipulate control states
             oViewModel = new JSONModel({
-                worklistTableTitle : this.getResourceBundle().getText("worklistTableTitle"),
-                shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
-                shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
-                tableNoDataText : this.getResourceBundle().getText("tableNoDataText")
+                busy: true,
+                delay: 0
             });
-            this.setModel(oViewModel, "worklistView");
-
+            
+            
+            this.getRouter().getRoute("home").attachPatternMatched(this._onHomeMatched, this);
+            this.setModel(oViewModel, "homeView");
         },
+
 
         /* =========================================================== */
         /* event handlers                                              */
@@ -163,10 +166,107 @@ sap.ui.define([
          * @param {sap.m.ObjectListItem} oItem selected Item
          * @private
          */
-        _showObject : function (oItem) {
-            this.getRouter().navTo("object", {
-                objectId: oItem.getBindingContext().getPath().substring("/Cliente1Set".length)
+        _onHomeMatched: function (oEvent) {
+
+             sID = "('" + oEvent.getParameter("arguments").Funcid + "')";
+
+            //filtra os funcionarios a partir do cliente
+            var oView = this.getView();
+            var oTable = oView.byId("table");
+            
+            var oBinding = oTable.getBinding("items");
+
+            // apply filters 
+            var aFilters = [];
+            var convertValue = sID.toString();
+            var vValue1 = convertValue.split("'");
+            var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+            aFilters.push(oFilter);
+
+            oBinding.filter(aFilters);
+
+        },
+
+        _showObject: function (oItem) {
+
+            var oModel = this.getModel();
+            var convertValue = sID.toString();
+            var vValue1 = convertValue.split("'");
+            var path = oItem.getBindingContext().getPath();
+            convertValue = path.toString();
+            var vValue2 = convertValue.split("'");
+
+
+            oModel.read("/Cliente1Set", {
+                //method: "GET",
+                success: function (oDados, resposta) {
+
+                    for (var i = 0; i < oDados.results.length; i++) {
+
+                        if (oDados.results[i].Funcid == vValue1[1] && oDados.results[i].Clinid == vValue2[1]) {
+                            dados = {
+                                sID: oDados.results[i].Funcid,
+                                Nome: oDados.results[i].Nome
+                            }
+                            this.getRouter().navTo("object", {
+                                Funcid: "('" + dados.sID + "')",
+                                Nome: "('" + dados.Nome + "')"
+
+                            })
+                        }
+                    }
+
+                }.bind(this),
+
+                error: function (oError) {
+                    var erro;
+                    erro = JSON.parse(oError.responseText);
+                    MessageToast.show("Dados incorreto ou usuário não cadastrado!");
+                }.bind(this),
             });
+
+
+
+        },
+
+        _bindView: function (sObjectPath) {
+            var oViewModel = this.getModel("homeView");
+
+            this.getView().bindElement({
+                path: sObjectPath,
+                events: {
+                    change: this._onBindingChange.bind(this),
+                    dataRequested: function () {
+                        oViewModel.setProperty("/busy", true);
+                    },
+                    dataReceived: function () {
+                        oViewModel.setProperty("/busy", false);
+                    }
+                }
+            });
+        },
+
+        _onBindingChange: function () {
+            var oView = this.getView(),
+                oViewModel = this.getModel("homeView"),
+                oElementBinding = oView.getElementBinding();
+
+            // No data for the binding
+            if (!oElementBinding.getBoundContext()) {
+                this.getRouter().getTargets().display("objectNotFound");
+                return;
+            }
+
+            var oResourceBundle = this.getResourceBundle(),
+                oObject = oView.getBindingContext().getObject(),
+                sObjectId = oObject.Funcid,
+                sObjectName = oObject.Nome;
+
+            oViewModel.setProperty("/busy", false);
+            oViewModel.setProperty("/shareSendEmailSubject",
+                oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
+            oViewModel.setProperty("/shareSendEmailMessage",
+                oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
         },
 
         /**

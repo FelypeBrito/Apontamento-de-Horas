@@ -105,7 +105,7 @@
         },
 
         {
-          "pattern": "Home",
+          "pattern": "Home/{Funcid}",
           "name": "home",
           "target": [
             "home"
@@ -145,7 +145,7 @@
           ]
         },
         {
-          "pattern": "cliente/{objectId}",
+          "pattern": "funcionario/{Funcid}/{Nome}",
           "name": "object",
           "target": [
             "object"

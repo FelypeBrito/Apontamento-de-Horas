@@ -50,13 +50,7 @@ sap.ui.define([
          * @public
          */
         onNavBack: function () {
-            var sPreviousHash = History.getInstance().getPreviousHash();
-            if (sPreviousHash !== undefined) {
-                // eslint-disable-next-line sap-no-history-manipulation
-                history.go(-1);
-            } else {
-                this.getRouter().navTo("worklist", {}, true);
-            }
+            history.go(-1);
         },
 
         onFuncionarioDelete(oEvent){
@@ -89,21 +83,27 @@ sap.ui.define([
          * @private
          */
         _onObjectMatched: function (oEvent) {
-            var sObjectId = oEvent.getParameter("arguments").objectId;
-            this._bindView("/Cliente1Set" + sObjectId);
 
-            //filtra os funcionarios a partir do cliente
+            var sID = oEvent.getParameter("arguments").Funcid;
+            this._bindView("/FuncionarioSet" + sID);
+
+            var sNome = oEvent.getParameter("arguments").Nome;
+
+            //filtra os funcionario refernte ao login a partir do cliente 
             var oView = this.getView();
             var oTable = oView.byId("idProductsTable");
             var oBinding = oTable.getBinding("items");
 
             // apply filters 
             var aFilters = [];
-            var convertValue = sObjectId.toString();
+            var convertValue = sID.toString();
             var vValue1 = convertValue.split("'");
-            var oFilter = new sap.ui.model.Filter("Clinid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+            var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
             aFilters.push(oFilter);
-
+            convertValue = sNome.toString();
+            vValue1 = convertValue.split("'");
+            oFilter = new sap.ui.model.Filter("Cliname", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+            aFilters.push(oFilter);
             oBinding.filter(aFilters);
         },
 

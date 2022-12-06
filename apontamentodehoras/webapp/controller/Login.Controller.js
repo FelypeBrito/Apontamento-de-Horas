@@ -33,13 +33,13 @@ sap.ui.define([
 
             oModel.read("/FuncionarioSet('" + dados.Funcid + "')", {
                 //method: "GET",
-                success: function (oDados, resposta) {
+                success: function (oDados, resposta) { 
 
                     if (oDados.Funcid == dados.Funcid && oDados.Senha == dados.Senha) {
 
                         MessageToast.show("Login realizado com sucesso!");
                         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                        oRouter.navTo("home", {});
+                        oRouter.navTo("home", {Funcid: oDados.Funcid});
                     }
 
                 }.bind(this),
@@ -52,11 +52,7 @@ sap.ui.define([
             });
         },
 
-        _showObject: function (oItem) {
-            this.getRouter().navTo("app", {
-                objectId: oItem.getBindingContext().getPath().substring("/Cliente1Set".length)
-            });
-        },
+       
 
     });
 },
