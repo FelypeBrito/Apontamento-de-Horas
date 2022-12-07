@@ -113,7 +113,7 @@
         },
 
         {
-          "pattern": "Apontamento",
+          "pattern": "Apontamento/{Funcid}",
           "name": "apontamento",
           "target": [
             "apontamento"
@@ -121,7 +121,7 @@
         },
 
         {
-          "pattern": "newClient",
+          "pattern": "newClient/{Funcid}",
           "name": "newclient",
           "target": [
             "newclient"
@@ -129,7 +129,7 @@
         },
 
         {
-          "pattern": "newEmployee",
+          "pattern": "newEmployee/{Funcid}",
           "name": "newemployee",
           "target": [
             "newemployee"
@@ -145,7 +145,7 @@
           ]
         },
         {
-          "pattern": "funcionario/{Funcid}/{Nome}",
+          "pattern": "funcionario/{Funcid}/{Nome}/{Clinid}",
           "name": "object",
           "target": [
             "object"
@@ -159,7 +159,7 @@
           ]
         },
         {
-          "pattern": "horas/{objectId}",
+          "pattern": "horas/{objectId}/{Clinid}",
           "name": "horas",
           "target": [
             "horas"

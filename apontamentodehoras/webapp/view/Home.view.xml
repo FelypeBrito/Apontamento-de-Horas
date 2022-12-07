@@ -73,7 +73,7 @@
                         <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
                     </Column>
                     <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="Funcid" id="unitNumberColumnTitle"/>
+                        <Text text="ID" id="unitNumberColumnTitle"/>
                     </Column>
                 </columns>
 
@@ -86,7 +86,7 @@
                             <ObjectIdentifier id="nomeClin"
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{Funcid}" />     
+                                unit="{Clinid}" />     
                         </cells>
                         
                     </ColumnListItem>

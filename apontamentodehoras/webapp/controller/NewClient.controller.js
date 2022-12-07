@@ -32,17 +32,19 @@ sap.ui.define([
             history.go(-1);
         },
         onGravar: function () {
+           
             var oModel = this.getModel();
 
             var dados = {
+                Clinid: this.byId("inpClinid").getValue(),
+                Funcid: this.byId("inpFuncid").getValue(),
                 Nome: this.byId("inpNome").getValue(),
             };
 
             oModel.create("/Cliente1Set", dados, {
                 success: function (oDados, resposta) {
-                    MessageToast.show('Cliente criado com sucesso!!.');
-                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                    oRouter.navTo("home", {});
+                    MessageToast.show('Cliente criado com sucesso!!');
+                    history.go(-1);
                 }.bind(this),
                 error: function (oError) {
                     debugger

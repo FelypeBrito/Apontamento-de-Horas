@@ -79,19 +79,19 @@ sap.ui.define([
 
         onApontar: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("apontamento", {})
+            oRouter.navTo("apontamento", {Funcid: sID})
             
         },
 
         onCliente: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("newclient", {})
+            oRouter.navTo("newclient", {Funcid: sID})
             
         },
 
         onFuncionario: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("newemployee", {})
+            oRouter.navTo("newemployee", {Funcid: sID})
             
         },
 
@@ -206,11 +206,13 @@ sap.ui.define([
                         if (oDados.results[i].Funcid == vValue1[1] && oDados.results[i].Clinid == vValue2[1]) {
                             dados = {
                                 sID: oDados.results[i].Funcid,
-                                Nome: oDados.results[i].Nome
+                                Nome: oDados.results[i].Nome,
+                                Clinid: oDados.results[i].Clinid
                             }
                             this.getRouter().navTo("object", {
                                 Funcid: "('" + dados.sID + "')",
-                                Nome: "('" + dados.Nome + "')"
+                                Nome: "('" + dados.Nome + "')",
+                                Clinid: "('" + dados.Clinid + "')"
 
                             })
                         }

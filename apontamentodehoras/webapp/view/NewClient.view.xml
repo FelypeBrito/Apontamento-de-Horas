@@ -9,7 +9,7 @@
     xmlns:mvc="sap.ui.core.mvc">
 
                     <Page
-                        title="Inserir novo Cliente"
+                        title="Atribuição de Cliente"
                         floatingFooter="true"
                         >
 
@@ -28,15 +28,23 @@
                             columnsXL="1"
                             columnsL="1"
                             columnsM="1"
+                            config.browser_validations = "true"
+                            
                             singleContainerFullSize="false">
 
-                            <Label text="Nome" />
-                            <Input valueLiveUpdate="true" id="inpNome" 
+                            <Label text="ID do Cliente" />
+                            <Input value="" id="inpClinid" placeholder = "Preencher com ID se existir" />
+                            <Label text="Nome do Cliente"   required= "true"/>
+                            <Input valueLiveUpdate="true" id="inpNome"  
                             value=""
                             maxLength="40"/>
+                            <Label text="ID do Funcionário" required= "true"/>
+                            <Input value="" id="inpFuncid"/>
+                            
                             
                            
                         </f:SimpleForm>
+                        
                         
                        <Toolbar>
                             <Button  text="Gravar" press="onGravar" />

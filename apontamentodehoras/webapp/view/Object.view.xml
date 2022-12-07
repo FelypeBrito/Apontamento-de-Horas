@@ -52,7 +52,7 @@
                             <ObjectIdentifier
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{Cliname}" />     
+                                unit="{Funcid}" />     
                         </cells>
                        
 				</ColumnListItem>

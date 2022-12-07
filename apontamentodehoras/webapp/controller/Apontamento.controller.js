@@ -2,6 +2,7 @@ var sdata;
 var sHinicial;
 var sHfinal;
 var sHtotal;
+var sID;
 
 sap.ui.define([
     "./BaseController",
@@ -28,6 +29,7 @@ sap.ui.define([
         onInit: function () {
             // apply content density mode to root view
             this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+            this.getRouter().getRoute("apontamento").attachPatternMatched(this._onApontamentoMatched, this);
             // create model
 
         },
@@ -39,11 +41,13 @@ sap.ui.define([
             var oModel = this.getModel();
 
             sHtotal = this.duracao(sHinicial, '00:00', '00:00', sHfinal);
+            var convertValue = sID.toString();
+            var vValue1 = convertValue.split("'");
 
 
             var dados = {
                 Clinid: this.byId("inpCliente").getValue(),
-                Funcid: this.byId("inpFuncid").getValue(),
+                Funcid: vValue1[1],
                 Data: sdata,
                 Atividade: this.byId("inpAtividade").getValue(),
                 Hentrada: sHinicial,
@@ -54,9 +58,8 @@ sap.ui.define([
 
             oModel.create("/HorasTrabalhadasSet", dados, {
                 success: function (oDados, resposta) {
-                    MessageToast.show('Horas apontadas com sucesso!!.');
-                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                        oRouter.navTo("home", {});
+                    MessageToast.show('Horas apontadas com sucesso!!');
+                    history.go(-1);
                 }.bind(this),
                 error: function (oError) {
                     debugger
@@ -102,6 +105,10 @@ sap.ui.define([
             return (horas + ":" + minutos);
         },
 
+        _onApontamentoMatched: function (oEvent) {
+
+            sID = oEvent.getParameter("arguments").Funcid ;
+        },
     });
 },
 

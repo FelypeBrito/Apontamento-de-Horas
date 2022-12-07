@@ -1,3 +1,5 @@
+var sClinid;
+
 sap.ui.define([
     "./BaseController",
     "sap/ui/model/json/JSONModel",
@@ -86,8 +88,8 @@ sap.ui.define([
 
             var sID = oEvent.getParameter("arguments").Funcid;
             this._bindView("/FuncionarioSet" + sID);
-
             var sNome = oEvent.getParameter("arguments").Nome;
+            sClinid = oEvent.getParameter("arguments").Clinid;
 
             //filtra os funcionario refernte ao login a partir do cliente 
             var oView = this.getView();
@@ -109,7 +111,8 @@ sap.ui.define([
 
         _showObject : function (oItem) {
             this.getRouter().navTo("horas", {
-                objectId: oItem.getBindingContext().getPath().substring("/FuncionarioSet".length)
+                objectId: oItem.getBindingContext().getPath().substring("/FuncionarioSet".length),
+                Clinid: sClinid
             });
         },
 

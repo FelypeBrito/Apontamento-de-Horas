@@ -38,11 +38,11 @@ sap.ui.define([
         onGravar: function () {
             var oModel = this.getModel();
 
-
             var dados = {
-                Clinid: this.byId("inpClinid").getValue(), 
+                Cliname: this.byId("inpCliname").getValue(),
+                Funcid: this.byId("inpFuncid").getValue(), 
                 Nome: this.byId("inpNome").getValue(),
-                Telefone: this.byId("inpNome").getValue(),
+                Telefone: this.byId("inpTelefone").getValue(),
                 Email: this.byId("inpEmail").getValue(),
                 Senha: this.byId("inpSenha").getValue(),
                 
@@ -50,9 +50,8 @@ sap.ui.define([
 
             oModel.create("/FuncionarioSet", dados, {
                 success: function (oDados, resposta) {
-                    MessageToast.show('/Funcionario criado com sucesso!!.');
-                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                        oRouter.navTo("home", {});
+                    MessageToast.show('/Funcionario criado com sucesso!!');
+                    history.go(-1);
                 }.bind(this),
                 error: function (oError) {
                     debugger

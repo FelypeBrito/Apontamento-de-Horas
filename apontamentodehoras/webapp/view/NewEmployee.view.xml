@@ -9,7 +9,7 @@
     xmlns:mvc="sap.ui.core.mvc">
 
                     <Page
-                        title="Inserir novo Funcionário"
+                        title="Atribuição de Funcionário"
                         floatingFooter="true"
                         >
 
@@ -30,21 +30,24 @@
                             columnsM="1"
                             singleContainerFullSize="false">
 
-                            <Label text="ID Cliente" />
-                            <Input valueLiveUpdate="true" id="inpClinid" 
+                            <Label text="ID do Funcionário" />
+                            <Input value="" id="inpFuncid" placeholder = "Preencher com ID se existir"/>
+
+                            <Label text="Cliente"  required= "true"/>
+                            <Input valueLiveUpdate="true" id="inpCliname"  
                             value=""
                             maxLength="40"/>
                             
-                            <Label text="Nome" />
+                            <Label text="Nome"  required= "true" />
                             <Input value="" id="inpNome"/>
 
-                            <Label text="Telefone" />
+                            <Label text="Telefone"  required= "true" />
                             <Input value="" id="inpTelefone"/>
 
-                            <Label text="E-mail" />
+                            <Label text="E-mail" required= "true" />
                             <Input value="" id="inpEmail"/>
 
-                             <Label text="Senha" />
+                            <Label text="Senha"  required= "true"/>
                             <Input value="" id="inpSenha"  type="Password" />
                            
                         </f:SimpleForm>

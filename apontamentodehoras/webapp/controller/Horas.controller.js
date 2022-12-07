@@ -151,6 +151,7 @@ sap.ui.define([
          _onHorasMatched: function (oEvent) {
             var sHorastId = oEvent.getParameter("arguments").objectId;
             this._bindView("/FuncionarioSet" + sHorastId );
+            var sClinid = oEvent.getParameter("arguments").Clinid;
 
             //filtra os funcionarios a partir do cliente
             var oView = this.getView();
@@ -162,6 +163,10 @@ sap.ui.define([
             var convertValue = sHorastId .toString();
             var vValue1 = convertValue.split("'");
             var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+            aFilters.push(oFilter);
+            convertValue = sClinid.toString();
+            vValue1 = convertValue.split("'");
+            oFilter = new sap.ui.model.Filter("Clinid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
             aFilters.push(oFilter);
 
             oBinding.filter(aFilters);
