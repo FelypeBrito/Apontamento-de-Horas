@@ -31,18 +31,16 @@
 
    <Table id="idProductsTable"
             mode = "Delete"
-            delete = "onFuncionarioDelete"
+            delete = "onProjetoDelete"
             width= "auto"
 			items="{
-				path: '/FuncionarioSet' 
+				path: '/ProjetoSet' 
 			}">
 			<columns>
                     <Column >
                         <Text text="Nome" />
                     </Column>
-                    <Column hAlign="End">
-                        <Text text="ID" />
-                    </Column>
+                   
                 </columns>
 		
 				<ColumnListItem
@@ -51,8 +49,7 @@
                         <cells>
                             <ObjectIdentifier
                                 title="{Nome}"/>
-                            <ObjectNumber
-                                unit="{Funcid}" />     
+                      
                         </cells>
                        
 				</ColumnListItem>

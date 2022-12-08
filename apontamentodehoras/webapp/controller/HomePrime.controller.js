@@ -9,7 +9,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
     "use strict";
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.Home", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.HomePrime", {
 
         formatter: formatter,
 
@@ -23,7 +23,6 @@ sap.ui.define([
          */
         onInit : function () {
             var oViewModel;
-            
 
             // keeps the search state
             this._aTableSearchState = [];
@@ -34,9 +33,9 @@ sap.ui.define([
                 delay: 0
             });
             
-            this.getRouter().getRoute("home").attachPatternMatched(this._onHomeMatched, this);
             
-            
+            this.getRouter().getRoute("homeprime").attachPatternMatched(this._onHomePrimeMatched, this);
+            this.setModel(oViewModel, "homeprimeView");
         },
 
 
@@ -53,7 +52,7 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent the update finished event
          * @public
          */
-        onUpdateFinished : function (oEvent) {
+        /*onUpdateFinished : function (oEvent) {
             // update the worklist's object counter after the table update
             var sTitle,
                 oTable = oEvent.getSource(),
@@ -66,8 +65,7 @@ sap.ui.define([
                 sTitle = this.getResourceBundle().getText("worklistTableTitle");
             }
             this.getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
-        },
-
+        },*/
 
         /**
          * Event handler when a table item gets pressed
@@ -168,10 +166,10 @@ sap.ui.define([
          * @param {sap.m.ObjectListItem} oItem selected Item
          * @private
          */
-        _onHomeMatched: function (oEvent) {
+        _onHomePrimeMatched: function (oEvent) {
 
              sID = "('" + oEvent.getParameter("arguments").Funcid + "')";
-
+/*
             //filtra os funcionarios a partir do cliente
             var oView = this.getView();
             var oTable = oView.byId("table");
@@ -185,7 +183,7 @@ sap.ui.define([
             var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
             aFilters.push(oFilter);
 
-            oBinding.filter(aFilters);
+            oBinding.filter(aFilters);*/
 
         },
 
@@ -207,12 +205,14 @@ sap.ui.define([
 
                         if (oDados.results[i].Funcid == vValue1[1] && oDados.results[i].Clinid == vValue2[1]) {
                             dados = {
-                                sID: vValue1[1],
-                                Nome: oDados.results[i].Nome
+                                sID: oDados.results[i].Funcid,
+                                Nome: oDados.results[i].Nome,
+                                Clinid: oDados.results[i].Clinid
                             }
                             this.getRouter().navTo("object", {
                                 Funcid: "('" + dados.sID + "')",
-                                Nome: "('" + dados.Nome + "')"
+                                Nome: "('" + dados.Nome + "')",
+                                Clinid: "('" + dados.Clinid + "')"
 
                             })
                         }
@@ -232,7 +232,7 @@ sap.ui.define([
         },
 
         _bindView: function (sObjectPath) {
-            var oViewModel = this.getModel("homeView");
+            var oViewModel = this.getModel("homeprimeView");
 
             this.getView().bindElement({
                 path: sObjectPath,
@@ -250,7 +250,7 @@ sap.ui.define([
 
         _onBindingChange: function () {
             var oView = this.getView(),
-                oViewModel = this.getModel("homeView"),
+                oViewModel = this.getModel("homeprimeView"),
                 oElementBinding = oView.getElementBinding();
 
             // No data for the binding
@@ -278,7 +278,7 @@ sap.ui.define([
          */
         _applySearch: function(aTableSearchState) {
             var oTable = this.byId("table"),
-                oViewModel = this.getModel("homeView");
+                oViewModel = this.getModel("homeprimeView");
             oTable.getBinding("items").filter(aTableSearchState, "Application");
             // changes the noDataText of the list in case there are no filter results
             if (aTableSearchState.length !== 0) {

@@ -24,23 +24,31 @@ sap.ui.define([
         onLoginTap: function (oEvent) {
             var oModel = this.getModel();
 
-            var dados = {
-                Funcid: this.getView().byId("id").getValue(),
-                Senha: this.getView().byId("pasw").getValue(),
+            
 
-            };
-
-
-            oModel.read("/FuncionarioSet('" + dados.Funcid + "')", {
+            oModel.read("/FuncionarioSet", {
                 //method: "GET",
-                success: function (oDados, resposta) { 
+                success: function (oDados, resposta) {
 
-                    if (oDados.Funcid == dados.Funcid && oDados.Senha == dados.Senha) {
+                    var dados = {
+                        Funcid: this.getView().byId("id").getValue(),
+                        Senha: this.getView().byId("pasw").getValue(),
+        
+                    };
+        
+
+                    for (var i = 0; i < oDados.results.length; i++) {
+                    if(oDados.results[i].Funcid == dados.Funcid && oDados.results[i].Senha == dados.Senha && oDados.results[i].Permissao == "X"){
+
+                    MessageToast.show("Login realizado com sucesso!");
+                    
+                    this.getRouter().navTo("homeprime", {Funcid: oDados.results[i].Funcid});
+
+                    }else if(oDados.results[i].Funcid == dados.Funcid && oDados.results[i].Senha == dados.Senha && oDados.results[i].Permissao == ""){
 
                         MessageToast.show("Login realizado com sucesso!");
-                        var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                        oRouter.navTo("home", {Funcid: oDados.Funcid});
-                    }
+                        this.getRouter().navTo("home", {Funcid: oDados.results[i].Funcid});
+                    }}
 
                 }.bind(this),
 

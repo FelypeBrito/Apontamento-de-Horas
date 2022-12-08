@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.Home"
+    controllerName="apontamento.apontamentodehoras.controller.HomePrime"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:l="sap.ui.layout"
@@ -20,6 +20,10 @@
 
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
+
+           <Button  text = "Novo Cliente" press = ".onCliente"  class="sapUiSmallMarginEnd"/>
+
+           <Button  text = "Novo Funcionário" press = ".onFuncionario"  class="sapUiSmallMarginEnd"/>
            
         </semantic:headerContent>
 
@@ -69,7 +73,7 @@
                         <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
                     </Column>
                     <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="ID" id="unitNumberColumnTitle"/>
+                        <Text text="Func" id="unitNumberColumnTitle"/>
                     </Column>
                 </columns>
 

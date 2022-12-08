@@ -113,6 +113,14 @@
         },
 
         {
+          "pattern": "HomePrime/{Funcid}",
+          "name": "homeprime",
+          "target": [
+            "homeprime"
+          ]
+        },
+
+        {
           "pattern": "Apontamento/{Funcid}",
           "name": "apontamento",
           "target": [
@@ -145,7 +153,7 @@
           ]
         },
         {
-          "pattern": "funcionario/{Funcid}/{Nome}/{Clinid}",
+          "pattern": "funcionario/{Funcid}/{Nome}",
           "name": "object",
           "target": [
             "object"
@@ -159,7 +167,7 @@
           ]
         },
         {
-          "pattern": "horas/{objectId}/{Clinid}",
+          "pattern": "horas/{Nome}",
           "name": "horas",
           "target": [
             "horas"
@@ -178,6 +186,13 @@
         "home": {
           "viewName": "Home",
           "viewId": "home",
+          "viewLevel": 2,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+        "homeprime": {
+          "viewName": "HomePrime",
+          "viewId": "homeprime",
           "viewLevel": 2,
           "title": "{i18n>worklistViewTitle}"
         }, 
