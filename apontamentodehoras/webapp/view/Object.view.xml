@@ -15,7 +15,7 @@
 
         <semantic:titleHeading>
             <Title
-                text="Funcionários"
+                text="Projetos"
                 level="H2"/>
         </semantic:titleHeading>
 
