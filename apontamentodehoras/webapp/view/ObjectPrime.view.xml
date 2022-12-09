@@ -22,10 +22,6 @@
         <semantic:headerContent>
         </semantic:headerContent>
 
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
-
         <l:VerticalLayout width="100%">
    
 

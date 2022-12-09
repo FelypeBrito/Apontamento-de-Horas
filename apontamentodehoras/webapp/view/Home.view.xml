@@ -21,11 +21,9 @@
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
 
-           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
+           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginbottom"/>
            
         </semantic:headerContent>
-
-       
 
         <semantic:content>
 
@@ -91,11 +89,6 @@
 
             </Table>
         </semantic:content>
-
-
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
 
     </semantic:SemanticPage>
 
