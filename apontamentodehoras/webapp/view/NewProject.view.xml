@@ -38,7 +38,7 @@
                             maxLength="40"/>
 
                             <Label text="Nome do Cliente"  required= "true" />
-                            <Input value="" id="inpTelefone"/>
+                            <Input value="" id="inpCliname"/>
 
                             <Label text="ID Funcionário" required= "true" />
                             <Input value="" id="inpFuncid"/>

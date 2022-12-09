@@ -21,7 +21,7 @@
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
 
-           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginbottom"/>
+           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
            
         </semantic:headerContent>
 

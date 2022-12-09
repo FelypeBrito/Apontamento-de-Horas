@@ -92,6 +92,11 @@ sap.ui.define([
                 property: "Nome",
                 type: EdmType.String,
             });
+            aCols.push({
+                label: "Projeto",
+                property: "Projname",
+                type: EdmType.String
+            });
     
             aCols.push({
                 label: "Atividade",

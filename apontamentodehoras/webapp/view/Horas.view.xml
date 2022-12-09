@@ -43,6 +43,9 @@
 					<Text text="Consultor" />
 				</Column>
                 <Column>
+					<Text text="Projeto" />
+				</Column>
+                <Column>
 					<Text text="Atividade" />
 				</Column>
 				<Column>
@@ -62,6 +65,8 @@
 						text="{Data}"/>
                         <ObjectAttribute
 						text="{Nome}"/>
+                        <ObjectAttribute
+						text="{Projname}"/>
 					<ObjectAttribute
 						text="{Atividade}"/>
                         <ObjectAttribute

@@ -1,7 +1,4 @@
-var sdata;
-var sHinicial;
-var sHfinal;
-var sHtotal;
+
 
 sap.ui.define([
     "./BaseController",
