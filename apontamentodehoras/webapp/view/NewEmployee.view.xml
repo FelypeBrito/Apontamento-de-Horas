@@ -46,7 +46,7 @@
                             <Label text="Senha"  required= "true"/>
                             <Input value="" id="inpSenha"  type="Password" />
 
-                            <Label text="Permissão" required= "true" />
+                            <Label text="Permissão"  />
                             <VBox class="sapUiMediumMarginEnd">
                             <CheckBox  id = "inpPermissao"/>
 			                </VBox>
