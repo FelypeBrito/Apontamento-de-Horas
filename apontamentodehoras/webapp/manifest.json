@@ -129,7 +129,7 @@
         },
 
         {
-          "pattern": "newClient/{Funcid}",
+          "pattern": "newClient/",
           "name": "newclient",
           "target": [
             "newclient"
@@ -137,26 +137,33 @@
         },
 
         {
-          "pattern": "newEmployee/{Funcid}",
+          "pattern": "newProject/",
+          "name": "newproject",
+          "target": [
+            "newproject"
+          ]
+        },
+
+        {
+          "pattern": "newEmployee/",
           "name": "newemployee",
           "target": [
             "newemployee"
           ]
         },
 
-       
-        {
-          "pattern": "",
-          "name": "worklist",
-          "target": [
-            "worklist"
-          ]
-        },
         {
           "pattern": "funcionario/{Funcid}/{Nome}",
           "name": "object",
           "target": [
             "object"
+          ]
+        },
+        {
+          "pattern": "funcionarios/{Nome}",
+          "name": "objectprime",
+          "target": [
+            "objectprime"
           ]
         },
         {
@@ -197,6 +204,14 @@
           "title": "{i18n>worklistViewTitle}"
         }, 
 
+        "newproject": {
+          "viewName": "newProject",
+          "viewId": "newproject",
+          "viewLevel": 3,
+          "title": "{i18n>worklistViewTitle}"
+        }, 
+
+
         "newclient": {
           "viewName": "NewClient",
           "viewId": "newclient",
@@ -217,13 +232,14 @@
           "viewLevel": 3,
           "title": "{i18n>worklistViewTitle}"
         },
-        
-        "worklist": {
-          "viewName": "Worklist",
-          "viewId": "worklist",
-          "viewLevel": 3,
+
+        "objectprime": {
+          "viewName": "ObjectPrime",
+          "viewId": "objectprime",
+          "viewLevel": 2,
           "title": "{i18n>worklistViewTitle}"
-        },
+        }, 
+
         "object": {
           "viewName": "Object",
           "viewId": "object",

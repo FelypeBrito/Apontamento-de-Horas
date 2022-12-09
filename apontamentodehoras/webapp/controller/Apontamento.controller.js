@@ -46,7 +46,7 @@ sap.ui.define([
 
 
             var dados = {
-                Clinid: this.byId("inpCliente").getValue(),
+                Projname: this.byId("inpProjname").getValue(),
                 Funcid: vValue1[1],
                 Data: sdata,
                 Atividade: this.byId("inpAtividade").getValue(),

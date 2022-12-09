@@ -30,8 +30,8 @@
                             columnsM="1"
                             singleContainerFullSize="false">
 
-                            <Label text="ID Cliente"  required= "true"/>
-                            <Input valueLiveUpdate="true" id="inpCliente" 
+                            <Label text="Nome do Projeto"  required= "true"/>
+                            <Input valueLiveUpdate="true" id="inpProjname" 
                             value=""
                             maxLength="40"/>
                             <Label text="Atividade"  required= "true"/>

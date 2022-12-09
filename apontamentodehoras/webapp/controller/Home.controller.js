@@ -84,6 +84,12 @@ sap.ui.define([
             oRouter.navTo("apontamento", {Funcid: sID})
             
         },
+        
+        onProjeto: function(oEvent){
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
+            oRouter.navTo("newproject", {Funcid: sID})
+            
+        },
 
         onCliente: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)

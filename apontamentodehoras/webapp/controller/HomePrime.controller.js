@@ -83,15 +83,21 @@ sap.ui.define([
             
         },
 
+        onProjeto: function(oEvent){
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
+            oRouter.navTo("newproject", {Funcid: sID})
+            
+        },
+
         onCliente: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("newclient", {Funcid: sID})
+            oRouter.navTo("newclient", {})
             
         },
 
         onFuncionario: function(oEvent){
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("newemployee", {Funcid: sID})
+            oRouter.navTo("newemployee", {})
             
         },
 
@@ -197,22 +203,19 @@ sap.ui.define([
             var vValue2 = convertValue.split("'");
 
 
-            oModel.read("/Cliente1Set", {
+            oModel.read("/ClientePrimeSet", {
                 //method: "GET",
                 success: function (oDados, resposta) {
 
                     for (var i = 0; i < oDados.results.length; i++) {
 
-                        if (oDados.results[i].Funcid == vValue1[1] && oDados.results[i].Clinid == vValue2[1]) {
+                        if (oDados.results[i].Clinid == vValue2[1]) {
                             dados = {
-                                sID: oDados.results[i].Funcid,
-                                Nome: oDados.results[i].Nome,
-                                Clinid: oDados.results[i].Clinid
+                                Nome: oDados.results[i].Nome
                             }
-                            this.getRouter().navTo("object", {
-                                Funcid: "('" + dados.sID + "')",
-                                Nome: "('" + dados.Nome + "')",
-                                Clinid: "('" + dados.Clinid + "')"
+                            this.getRouter().navTo("objectprime", {
+
+                                Nome: "('" + dados.Nome + "')"
 
                             })
                         }

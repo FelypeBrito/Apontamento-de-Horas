@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="apontamento.apontamentodehoras.controller.NewEmployee"
+    controllerName="apontamento.apontamentodehoras.controller.NewProject"
     displayBlock="true"
     xmlns="sap.m"
     height="100%"
@@ -9,7 +9,7 @@
     xmlns:mvc="sap.ui.core.mvc">
 
                     <Page
-                        title="Criar novo Funcionário"
+                        title="Criar novo Projeto"
                         floatingFooter="true"
                         >
 
@@ -37,20 +37,13 @@
                             value=""
                             maxLength="40"/>
 
-                            <Label text="Telefone"  required= "true" />
+                            <Label text="Nome do Cliente"  required= "true" />
                             <Input value="" id="inpTelefone"/>
 
-                            <Label text="E-mail" required= "true" />
-                            <Input value="" id="inpEmail"/>
+                            <Label text="ID Funcionário" required= "true" />
+                            <Input value="" id="inpFuncid"/>
 
-                            <Label text="Senha"  required= "true"/>
-                            <Input value="" id="inpSenha"  type="Password" />
-
-                            <Label text="Permissão" required= "true" />
-                            <VBox class="sapUiMediumMarginEnd">
-                            <CheckBox  id = "inpPermissao"/>
-			                </VBox>
-                           
+                    
                         </f:SimpleForm>
                         
                        <Toolbar>

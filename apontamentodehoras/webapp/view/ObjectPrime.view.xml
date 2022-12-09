@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="apontamento.apontamentodehoras.controller.ObjectPrime"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="Projetos"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+        </semantic:headerContent>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <l:VerticalLayout width="100%">
+   
+
+   <Table id="idProductsTable"
+            mode = "Delete"
+            delete = "onProjetoDelete"
+            width= "auto"
+			items="{
+				path: '/ProjetoSet' 
+			}">
+			<columns>
+                    <Column >
+                        <Text text="Nome" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="ID" />
+                    </Column>
+                   
+                </columns>
+		
+				<ColumnListItem
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{Nome}"/>
+                                <ObjectNumber
+                                unit="{Funcid}" />     
+                      
+                        </cells>
+                       
+				</ColumnListItem>
+		</Table>
+</l:VerticalLayout>
+
+    </semantic:SemanticPage>
+
+   
+
+
+</mvc:View>

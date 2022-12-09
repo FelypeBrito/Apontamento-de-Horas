@@ -20,6 +20,8 @@
 
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
+
+           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
            
         </semantic:headerContent>
 
@@ -30,8 +32,6 @@
             <Table
                 id="table"
                 width="auto"
-                mode = "Delete"
-                delete = "onClienteDelete"
                 items="{
                     path: '/Cliente1Set',
                     sorter: {
@@ -82,7 +82,7 @@
                             <ObjectIdentifier id="nomeClin"
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{Funcnome}" />     
+                                unit="{Clinid}" />     
                         </cells>
                         
                     </ColumnListItem>

@@ -1,3 +1,7 @@
+var sdata;
+var sHinicial;
+var sHfinal;
+var sHtotal;
 
 sap.ui.define([
     "./BaseController",
@@ -14,10 +18,8 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, History, MessageToast, UIComponent, Core, CoreLibrary, UnifiedLibrary, DateTypeRange, DateFormat) {
     "use strict";
 
-    var CalendarDayType = UnifiedLibrary.CalendarDayType,
-        ValueState = CoreLibrary.ValueState;
 
-    return BaseController.extend("apontamento.apontamentodehoras.controller.NewEmployee", {
+    return BaseController.extend("apontamento.apontamentodehoras.controller.NewProject", {
 
         formatter: formatter,
 
@@ -38,24 +40,14 @@ sap.ui.define([
             var dados = {
 
                 Nome: this.byId("inpNome").getValue(),
-                Telefone: this.byId("inpTelefone").getValue(),
-                Email: this.byId("inpEmail").getValue(),
-                Senha: this.byId("inpSenha").getValue(),
-                Permissao: this.byId("inpPermissao").getSelected()
+                Cliname: this.byId("inpCliname").getValue(),
+                Funcid: this.byId("inpFuncid").getValue(),
                 
             };
-
-            if(dados.Permissao == true){
-
-                dados.Permissao = "X"
-            } else {
-
-                dados.Permissao = ""
-            }
              
 
 
-            oModel.create("/FuncionarioSet", dados, {
+            oModel.create("/ProjetoSet", dados, {
                 success: function (oDados, resposta) {
                     MessageToast.show('Funcionário criado com sucesso!!');
                     history.go(-1);

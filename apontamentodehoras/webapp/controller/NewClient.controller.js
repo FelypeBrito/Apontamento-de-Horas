@@ -36,8 +36,7 @@ sap.ui.define([
             var oModel = this.getModel();
 
             var dados = {
-                Clinid: this.byId("inpClinid").getValue(),
-                Funcid: this.byId("inpFuncid").getValue(),
+
                 Nome: this.byId("inpNome").getValue(),
             };
 

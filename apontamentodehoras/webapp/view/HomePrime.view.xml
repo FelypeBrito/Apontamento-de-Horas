@@ -21,9 +21,13 @@
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
 
+           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
+
            <Button  text = "Novo Cliente" press = ".onCliente"  class="sapUiSmallMarginEnd"/>
 
            <Button  text = "Novo Funcionário" press = ".onFuncionario"  class="sapUiSmallMarginEnd"/>
+
+           
            
         </semantic:headerContent>
 
@@ -37,7 +41,7 @@
                 mode = "Delete"
                 delete = "onClienteDelete"
                 items="{
-                    path: '/Cliente1Set',
+                    path: '/ClientePrimeSet',
                     sorter: {
                         path: 'Nome',
                         descending: false
@@ -73,7 +77,7 @@
                         <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
                     </Column>
                     <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="Func" id="unitNumberColumnTitle"/>
+                        <Text text="ID" id="unitNumberColumnTitle"/>
                     </Column>
                 </columns>
 
@@ -86,7 +90,7 @@
                             <ObjectIdentifier id="nomeClin"
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{Funcnome}" />     
+                                unit="{Clinid}" />     
                         </cells>
                         
                     </ColumnListItem>
