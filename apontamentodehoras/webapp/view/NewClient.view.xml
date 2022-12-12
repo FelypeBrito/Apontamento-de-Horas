@@ -29,6 +29,7 @@
                             columnsL="1"
                             columnsM="1"
                             config.browser_validations = "true"
+                            showClearButton="true"
                             
                             singleContainerFullSize="false">
 
@@ -36,16 +37,15 @@
                             <Input valueLiveUpdate="true" id="inpNome"  
                             value=""
                             maxLength="40"/>
-                            
-                            
-                            
                            
                         </f:SimpleForm>
                         
                         
-                       <Toolbar>
+                        <Toolbar class="sapUiSmallMarginBottom">
                             <Button  text="Gravar" press="onGravar" />
-                            <Button  text="Cancelar" press="onCancelar " />
+                            <Button  text="Cancelar" press="onCancelar "  />
 			            </Toolbar>
-                    </Page>
+
+                        
+        </Page>
 </mvc:View>

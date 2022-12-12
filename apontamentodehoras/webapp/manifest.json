@@ -83,6 +83,10 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
+        "sample":{
+          "files":["Dialog.fragment.xml",
+					"ValueHelpDialog.fragment.xml"]
+        },
         "viewType": "XML",
         "viewPath": "apontamento.apontamentodehoras.view",
         "controlId": "app",

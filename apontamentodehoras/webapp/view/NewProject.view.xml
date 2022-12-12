@@ -32,7 +32,7 @@
 
                             
 
-                            <Label text="Nome"  required= "true"/>
+                            <Label text="Nome do Projeto"  required= "true"/>
                             <Input valueLiveUpdate="true" id="inpNome"  
                             value=""
                             maxLength="40"/>
@@ -46,9 +46,69 @@
                     
                         </f:SimpleForm>
                         
-                       <Toolbar>
+                       <Toolbar class="sapUiSmallMarginBottom">
                             <Button  text="Gravar" press="onGravar" />
-                            <Button  text="Cancelar" press="onCancelar " />
+                            <Button  text="Cancelar" press="onCancelar "  />
 			            </Toolbar>
+
+
+                        <Table class="sapUiSmallMarginBottom"
+                         id="idProductsTable"
+                        width= "auto"
+			            items="{
+				                path: '/FuncionarioSet' 
+			                    }">
+			            <columns>
+                            <Column >
+                                <Text text="Funcionários" />
+                            </Column>
+                            <Column hAlign="End">
+                                <Text text="ID" />
+                            </Column>
+                   
+                        </columns>
+		
+				                <ColumnListItem
+                                    type="Navigation"
+                                    press=".onPress">
+                                    <cells>
+                                        <ObjectIdentifier
+                                            title="{Nome}"/>
+                                            <ObjectNumber
+                                            unit="{Funcid}" />     
+                                
+                                        </cells>
+                                    
+                                </ColumnListItem>
+                        </Table>
+
+                        <Table id="idClintable"
+                        width= "auto"
+			            items="{
+				                path: '/ClientePrimeSet' 
+			                    }">
+			            <columns>
+                            <Column >
+                                <Text text="Clientes" />
+                            </Column>
+                            <Column hAlign="End">
+                                <Text text="ID" />
+                            </Column>
+                   
+                        </columns>
+		
+				                <ColumnListItem
+                                    type="Navigation"
+                                    press=".onPress">
+                                    <cells>
+                                        <ObjectIdentifier
+                                            title="{Nome}"/>
+                                            <ObjectNumber
+                                            unit="{Clinid}" />     
+                                
+                                        </cells>
+                                    
+                                </ColumnListItem>
+                        </Table>
                     </Page>
 </mvc:View>

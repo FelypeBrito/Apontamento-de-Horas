@@ -52,10 +52,14 @@
 			                </VBox>
                            
                         </f:SimpleForm>
+
                         
-                       <Toolbar>
+                        
+                       <Toolbar class="sapUiSmallMarginBottom">
                             <Button  text="Gravar" press="onGravar" />
-                            <Button  text="Cancelar" press="onCancelar " />
+                            <Button  text="Cancelar" press="onCancelar "  />
 			            </Toolbar>
+
+                       
                     </Page>
 </mvc:View>
