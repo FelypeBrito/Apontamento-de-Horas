@@ -3,6 +3,7 @@ var sHinicial;
 var sHfinal;
 var sHtotal;
 var sID;
+var consultorNome;
 
 sap.ui.define([
     "./BaseController",
@@ -44,10 +45,13 @@ sap.ui.define([
             var convertValue = sID.toString();
             var vValue1 = convertValue.split("'");
 
+           
+
 
             var dados = {
                 Projname: this.byId("inpProjname").getValue(),
                 Funcid: vValue1[1],
+                Nome: consultorNome,
                 Data: sdata,
                 Atividade: this.byId("inpAtividade").getValue(),
                 Hentrada: sHinicial,
@@ -107,7 +111,38 @@ sap.ui.define([
 
         _onApontamentoMatched: function (oEvent) {
 
-            sID = oEvent.getParameter("arguments").Funcid ;
+            sID = oEvent.getParameter("arguments").Funcid
+            var convertValue = sID.toString();
+            var vValue1 = convertValue.split("'");
+            var oModel = this.getModel();
+        
+     
+            oModel.read("/FuncionarioSet", {
+
+                
+                //method: "GET",
+                success: function (oDados, resposta) {
+
+                    for (var i = 0; i < oDados.results.length; i++) {
+
+                        if (oDados.results[i].Funcid == vValue1[1] ) {
+                           
+                            consultorNome = oDados.results[i].Nome;                        }
+                   
+                    }
+
+                }.bind(this),
+
+                error: function (oError) {
+                    var erro;
+                    erro = JSON.parse(oError.responseText);
+                    MessageToast.show("Dados incorreto ou usuário não cadastrado!");
+                }.bind(this),
+            });
+
+
+            
+            ;
         },
     });
 },
