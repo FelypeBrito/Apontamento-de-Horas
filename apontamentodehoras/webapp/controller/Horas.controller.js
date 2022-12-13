@@ -101,6 +101,12 @@ sap.ui.define([
             });
 
             aCols.push({
+                label: "Descrição",
+                property: "Descricao",
+                type: EdmType.String
+            });
+
+            aCols.push({
                 label: "Horário de entrada",
                 property: "Hentrada",
                 type: EdmType.String

@@ -23,7 +23,7 @@
         </semantic:headerContent>
 
         <l:VerticalLayout width="100%">
-   
+        
    <Table id="idProductsTable"
             mode = "Delete"
             delete = "onProjetoDelete"
