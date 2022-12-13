@@ -34,7 +34,6 @@ sap.ui.define([
             this.getRouter().getRoute("objectprime").attachPatternMatched(this._onObjectPrimeMatched, this);
             this.setModel(oViewModel, "objectprimeView");
 
-
         },
 
         /* =========================================================== */
@@ -88,9 +87,9 @@ sap.ui.define([
         _onObjectPrimeMatched: function (oEvent) {
 
             //sID = oEvent.getParameter("arguments").Funcid;
-           // this._bindView("/ProjetoSet" + sID);
+            // this._bindView("/ProjetoSet" + sID);
             var sNome = oEvent.getParameter("arguments").Nome;
-            
+
             //filtra os funcionario refernte ao login a partir do cliente 
             var oView = this.getView();
             var oTable = oView.byId("idProductsTable");
@@ -104,7 +103,7 @@ sap.ui.define([
 
             aFilters.push(oFilter);
             oBinding.filter(aFilters);
-        
+
         },
 
         _showObject: function (oItem) {
@@ -143,7 +142,6 @@ sap.ui.define([
                 }.bind(this),
             })
         },
-
 
         /**
          * Binds the view to the object path.

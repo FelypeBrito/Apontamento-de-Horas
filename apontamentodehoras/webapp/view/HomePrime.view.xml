@@ -13,7 +13,7 @@
 
         <semantic:titleHeading>
             <Title
-                text="Clientes"
+                text="Todos os Clientes"
                 level="H2"/>
         </semantic:titleHeading>
 
@@ -25,13 +25,9 @@
 
            <Button  text = "Novo Cliente" press = ".onCliente"  class="sapUiSmallMarginEnd"/>
 
-           <Button  text = "Novo Funcionário" press = ".onFuncionario"  class="sapUiSmallMarginEnd"/>
-
-           
+           <Button  text = "Novo Funcionário" press = ".onFuncionario"  class="sapUiSmallMarginEnd"/>     
            
         </semantic:headerContent>
-
-       
 
         <semantic:content>
 
@@ -101,6 +97,5 @@
         </semantic:content>
 
     </semantic:SemanticPage>
-
 
 </mvc:View>

@@ -6,7 +6,7 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/export/Spreadsheet",
     "sap/ui/export/library"
-], function (BaseController, JSONModel, formatter, History, UIComponent,Spreadsheet, EdmType) {
+], function (BaseController, JSONModel, formatter, History, UIComponent, Spreadsheet, EdmType) {
 
     "use strict";
 
@@ -24,8 +24,6 @@ sap.ui.define([
             });
             this.getRouter().getRoute("horas").attachPatternMatched(this._onHorasMatched, this);
             this.setModel(oViewModel, "horasView");
-
-
         },
 
         onAfterRendering: function () {
@@ -39,9 +37,7 @@ sap.ui.define([
             this.getRouter().getRoute("horas").attachPatternMatched(this._onHorasMatched, this);
             this.setModel(oViewModel, "horasView");
 
-
         },
-
 
         onNavBack: function () {
             var oHistory = History.getInstance();
@@ -54,13 +50,13 @@ sap.ui.define([
             }
         },
 
-        onExport : function () {
+        onExport: function () {
             var oTable = this.getView().byId("idNoteTable"),
                 oRowBinding, aCols, oSettings, oSheet;
-                
+
             oRowBinding = oTable.getBinding("items");
             aCols = this.createColumnConfig();
-            
+
             oSettings = {
                 workbook: {
                     columns: aCols
@@ -70,23 +66,23 @@ sap.ui.define([
                 fileName: "Horas Trabalhadas.xlsx"
                 //worker: false // We need to disable worker because we are using a MockServer as OData Service
             };
-    
+
             oSheet = new Spreadsheet(oSettings);
-            oSheet.build().finally(function() {
+            oSheet.build().finally(function () {
                 oSheet.destroy();
             });
-    
+
         },
 
-        createColumnConfig: function() {
+        createColumnConfig: function () {
             var aCols = [];
-    
+
             aCols.push({
                 label: 'Data',
                 property: "Data",
                 type: EdmType.String,
             });
-    
+
             aCols.push({
                 label: "Consultor",
                 property: "Nome",
@@ -97,7 +93,7 @@ sap.ui.define([
                 property: "Projname",
                 type: EdmType.String
             });
-    
+
             aCols.push({
                 label: "Atividade",
                 property: "Atividade",
@@ -109,42 +105,39 @@ sap.ui.define([
                 property: "Hentrada",
                 type: EdmType.String
             });
-    
+
             aCols.push({
                 label: "Horário de Saída",
                 property: "Hsaida",
                 type: EdmType.String
             });
-    
+
             aCols.push({
                 label: "Horas Trabalhadas",
                 property: "Htotal",
                 type: EdmType.String
             });
-    
+
             return aCols;
         },
 
-        onHorasDelete(oEvent){
+        onHorasDelete(oEvent) {
             var oItem = oEvent.getParameter("listItem");
             var sPath = oItem.getBindingContext().getPath();
 
             var oModel = this.getView().getModel();
 
-            oModel.remove(sPath,  {
-                success: function(){
-                    sap.m.MessageToast.show('Apontamento eliminado com sucesso.');               
+            oModel.remove(sPath, {
+                success: function () {
+                    sap.m.MessageToast.show('Apontamento eliminado com sucesso.');
                 }.bind(this),
-                error: function(e){
+                error: function (e) {
                     console.error(e);
                 }.bind(this),
 
             });
 
         },
-
-          
-        
 
         /**
          * Binds the view to the object path.
@@ -153,7 +146,7 @@ sap.ui.define([
          * @private
          */
 
-         _onHorasMatched: function (oEvent) {
+        _onHorasMatched: function (oEvent) {
             //var sHorastId = oEvent.getParameter("arguments").objectId;
             //this._bindView("/FuncionarioSet" + sHorastId );
             var sProjname = oEvent.getParameter("arguments").Nome

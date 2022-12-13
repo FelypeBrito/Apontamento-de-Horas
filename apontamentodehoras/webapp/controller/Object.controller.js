@@ -34,13 +34,11 @@ sap.ui.define([
             this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
             this.setModel(oViewModel, "objectView");
 
-
         },
 
         /* =========================================================== */
         /* event handlers                                              */
         /* =========================================================== */
-
         onPress: function (oEvent) {
             // The source is the list item that got pressed
             this._showObject(oEvent.getSource());
@@ -73,7 +71,6 @@ sap.ui.define([
             });
 
         },
-
 
         /* =========================================================== */
         /* internal methods                                            */
@@ -117,7 +114,6 @@ sap.ui.define([
             convertValue = path.toString();
             var vValue2 = convertValue.split("'");
 
-
             oModel.read("/ProjetoSet", {
                 //method: "GET",
                 success: function (oDados, resposta) {
@@ -145,7 +141,6 @@ sap.ui.define([
                 }.bind(this),
             })
         },
-
 
         /**
          * Binds the view to the object path.

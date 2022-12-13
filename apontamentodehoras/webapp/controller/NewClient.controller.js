@@ -32,7 +32,7 @@ sap.ui.define([
             history.go(-1);
         },
         onGravar: function () {
-           
+
             var oModel = this.getModel();
 
             var dados = {

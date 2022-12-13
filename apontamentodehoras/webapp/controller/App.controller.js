@@ -1,8 +1,3 @@
-var sdata;
-var sHinicial;
-var sHfinal;
-var sHtotal;
-
 sap.ui.define([
     "./BaseController",
     "sap/ui/model/json/JSONModel",
@@ -17,11 +12,6 @@ sap.ui.define([
     "sap/ui/core/format/DateFormat"
 ], function (BaseController, JSONModel, formatter, History, MessageToast, UIComponent, Core, CoreLibrary, UnifiedLibrary, DateTypeRange, DateFormat) {
     "use strict";
-
-    var CalendarDayType = UnifiedLibrary.CalendarDayType,
-        ValueState = CoreLibrary.ValueState;
-
-
 
     return BaseController.extend("apontamento.apontamentodehoras.controller.App", {
 

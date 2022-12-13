@@ -17,7 +17,6 @@
                 level="H2"/>
         </semantic:titleHeading>
 
-
         <semantic:headerContent>
            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
 
@@ -85,12 +84,10 @@
                         
                     </ColumnListItem>
                 </items>
-                
 
             </Table>
         </semantic:content>
 
     </semantic:SemanticPage>
-
 
 </mvc:View>

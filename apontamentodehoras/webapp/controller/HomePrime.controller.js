@@ -21,7 +21,7 @@ sap.ui.define([
          * Called when the worklist controller is instantiated.
          * @public
          */
-        onInit : function () {
+        onInit: function () {
             var oViewModel;
 
             // keeps the search state
@@ -32,8 +32,8 @@ sap.ui.define([
                 busy: true,
                 delay: 0
             });
-            
-            
+
+
             this.getRouter().getRoute("homeprime").attachPatternMatched(this._onHomePrimeMatched, this);
             this.setModel(oViewModel, "homeprimeView");
         },
@@ -72,33 +72,33 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent the table selectionChange event
          * @public
          */
-        onPress : function (oEvent) {
+        onPress: function (oEvent) {
             // The source is the list item that got pressed
             this._showObject(oEvent.getSource());
         },
 
-        onApontar: function(oEvent){
+        onApontar: function (oEvent) {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("apontamento", {Funcid: sID})
-            
+            oRouter.navTo("apontamento", { Funcid: sID })
+
         },
 
-        onProjeto: function(oEvent){
+        onProjeto: function (oEvent) {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
-            oRouter.navTo("newproject", {Funcid: sID})
-            
+            oRouter.navTo("newproject", { Funcid: sID })
+
         },
 
-        onCliente: function(oEvent){
+        onCliente: function (oEvent) {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
             oRouter.navTo("newclient", {})
-            
+
         },
 
-        onFuncionario: function(oEvent){
+        onFuncionario: function (oEvent) {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this)
             oRouter.navTo("newemployee", {})
-            
+
         },
 
 
@@ -107,13 +107,13 @@ sap.ui.define([
          * Navigate back in the browser history
          * @public
          */
-        onNavBack : function() {
+        onNavBack: function () {
             // eslint-disable-next-line sap-no-history-manipulation
             history.go(-1);
         },
 
 
-        onSearch : function (oEvent) {
+        onSearch: function (oEvent) {
             if (oEvent.getParameters().refreshButtonPressed) {
                 // Search field's 'refresh' button has been pressed.
                 // This is visible if you select any main list item.
@@ -137,23 +137,23 @@ sap.ui.define([
          * and group settings and refreshes the list binding.
          * @public
          */
-        onRefresh : function () {
+        onRefresh: function () {
             var oTable = this.byId("table");
             oTable.getBinding("items").refresh();
         },
 
 
-        onClienteDelete(oEvent){
+        onClienteDelete(oEvent) {
             var oItem = oEvent.getParameter("listItem");
             var sPath = oItem.getBindingContext().getPath();
 
             var oModel = this.getView().getModel();
 
-            oModel.remove(sPath,  {
-                success: function(){
-                    sap.m.MessageToast.show('Cliente eliminado com sucesso.');               
+            oModel.remove(sPath, {
+                success: function () {
+                    sap.m.MessageToast.show('Cliente eliminado com sucesso.');
                 }.bind(this),
-                error: function(e){
+                error: function (e) {
                     console.error(e);
                 }.bind(this),
 
@@ -161,12 +161,9 @@ sap.ui.define([
 
         },
 
-
-
         /* =========================================================== */
         /* internal methods                                            */
         /* =========================================================== */
-
         /**
          * Shows the selected item on the object page
          * @param {sap.m.ObjectListItem} oItem selected Item
@@ -174,22 +171,22 @@ sap.ui.define([
          */
         _onHomePrimeMatched: function (oEvent) {
 
-             sID = "('" + oEvent.getParameter("arguments").Funcid + "')";
-/*
-            //filtra os funcionarios a partir do cliente
-            var oView = this.getView();
-            var oTable = oView.byId("table");
+            sID = "('" + oEvent.getParameter("arguments").Funcid + "')";
+            /*
+                        //filtra os funcionarios a partir do cliente
+                        var oView = this.getView();
+                        var oTable = oView.byId("table");
+                        
+                        var oBinding = oTable.getBinding("items");
             
-            var oBinding = oTable.getBinding("items");
-
-            // apply filters 
-            var aFilters = [];
-            var convertValue = sID.toString();
-            var vValue1 = convertValue.split("'");
-            var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
-            aFilters.push(oFilter);
-
-            oBinding.filter(aFilters);*/
+                        // apply filters 
+                        var aFilters = [];
+                        var convertValue = sID.toString();
+                        var vValue1 = convertValue.split("'");
+                        var oFilter = new sap.ui.model.Filter("Funcid", sap.ui.model.FilterOperator.EQ, vValue1[1]);
+                        aFilters.push(oFilter);
+            
+                        oBinding.filter(aFilters);*/
 
         },
 
@@ -279,7 +276,7 @@ sap.ui.define([
          * @param {sap.ui.model.Filter[]} aTableSearchState An array of filters for the search
          * @private
          */
-        _applySearch: function(aTableSearchState) {
+        _applySearch: function (aTableSearchState) {
             var oTable = this.byId("table"),
                 oViewModel = this.getModel("homeprimeView");
             oTable.getBinding("items").filter(aTableSearchState, "Application");

@@ -24,7 +24,6 @@
 
         <l:VerticalLayout width="100%">
    
-
    <Table id="idProductsTable"
             mode = "Delete"
             delete = "onProjetoDelete"
@@ -37,7 +36,7 @@
                         <Text text="Nome" />
                     </Column>
                     <Column hAlign="End">
-                        <Text text="ID" />
+                        <Text text="Funcionário" />
                     </Column>
                    
                 </columns>
@@ -49,7 +48,7 @@
                             <ObjectIdentifier
                                 title="{Nome}"/>
                                 <ObjectNumber
-                                unit="{Funcid}" />     
+                                unit="{Funcname}" />     
                       
                         </cells>
                        
@@ -58,8 +57,4 @@
 </l:VerticalLayout>
 
     </semantic:SemanticPage>
-
-   
-
-
 </mvc:View>

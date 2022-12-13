@@ -33,7 +33,7 @@ sap.ui.define([
         },
         onGravar: function () {
             var oModel = this.getModel();
-           
+
 
             var dados = {
 
@@ -42,18 +42,16 @@ sap.ui.define([
                 Email: this.byId("inpEmail").getValue(),
                 Senha: this.byId("inpSenha").getValue(),
                 Permissao: this.byId("inpPermissao").getSelected()
-                
+
             };
 
-            if(dados.Permissao == true){
+            if (dados.Permissao == true) {
 
                 dados.Permissao = "X"
             } else {
 
                 dados.Permissao = ""
             }
-             
-
 
             oModel.create("/FuncionarioSet", dados, {
                 success: function (oDados, resposta) {

@@ -45,7 +45,7 @@ sap.ui.define([
             var convertValue = sID.toString();
             var vValue1 = convertValue.split("'");
 
-           
+
 
 
             var dados = {
@@ -115,20 +115,21 @@ sap.ui.define([
             var convertValue = sID.toString();
             var vValue1 = convertValue.split("'");
             var oModel = this.getModel();
-        
-     
+
+
             oModel.read("/FuncionarioSet", {
 
-                
+
                 //method: "GET",
                 success: function (oDados, resposta) {
 
                     for (var i = 0; i < oDados.results.length; i++) {
 
-                        if (oDados.results[i].Funcid == vValue1[1] ) {
-                           
-                            consultorNome = oDados.results[i].Nome;                        }
-                   
+                        if (oDados.results[i].Funcid == vValue1[1]) {
+
+                            consultorNome = oDados.results[i].Nome;
+                        }
+
                     }
 
                 }.bind(this),
@@ -141,7 +142,7 @@ sap.ui.define([
             });
 
 
-            
+
             ;
         },
     });
