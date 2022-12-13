@@ -41,12 +41,21 @@ sap.ui.define([
                         if (oDados.results[i].Funcid == dados.Funcid && oDados.results[i].Senha == dados.Senha && oDados.results[i].Permissao == "X") {
 
                             MessageToast.show("Login realizado com sucesso!");
+                            var oInput1 = this.getView().byId("id");
+                            oInput1.setValue("");
+                            var oInput2 = this.getView().byId("pasw");
+                            oInput2.setValue("");
 
                             this.getRouter().navTo("homeprime", { Funcid: oDados.results[i].Funcid });
+
 
                         } else if (oDados.results[i].Funcid == dados.Funcid && oDados.results[i].Senha == dados.Senha && oDados.results[i].Permissao == "") {
 
                             MessageToast.show("Login realizado com sucesso!");
+                            var oInput1 = this.getView().byId("id");
+                            oInput1.setValue("");
+                            var oInput2 = this.getView().byId("pasw");
+                            oInput2.setValue("");
                             this.getRouter().navTo("home", { Funcid: oDados.results[i].Funcid });
                         }
                     }

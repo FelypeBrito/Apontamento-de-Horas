@@ -57,15 +57,15 @@ sap.ui.define([
                 success: function (oDados, resposta) {
                     MessageToast.show('Funcionário criado com sucesso!!');
                     var oInput1 = this.getView().byId("inpNome");
-                    oInput1.setValue("");
                     var oInput2 = this.getView().byId("inpTelefone");
-                    oInput2.setValue("");
                     var oInput3 = this.getView().byId("inpEmail");
-                    oInput3.setValue("");
                     var oInput4 = this.getView().byId("inpSenha");
-                    oInput4.setValue("");
                     var oInput5 = this.getView().byId("inpPermissao");
-                    oInput5.setValue("");
+                    oInput1.setValue("");
+                    oInput2.setValue("");
+                    oInput3.setValue("");
+                    oInput4.setValue("");
+                   
                     history.go(-1);
                 }.bind(this),
                 error: function (oError) {

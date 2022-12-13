@@ -85,7 +85,7 @@
                         <Table id="idClintable"
                         width= "auto"
 			            items="{
-				                path: '/ClientePrimeSet' 
+				                path: '/ClienteAllSet' 
 			                    }">
 			            <columns>
                             <Column >
