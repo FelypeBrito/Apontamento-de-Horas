@@ -64,6 +64,12 @@ sap.ui.define([
                 success: function (oDados, resposta) {
                     MessageToast.show('Horas apontadas com sucesso!!');
                     history.go(-1);
+                    var oInput1 = this.getView().byId("inpProjname");
+                    oInput1.setValue("");
+                    var oInput2 = this.getView().byId("inpAtividade");
+                    oInput2.setValue("");
+                    var oInput3 = this.getView().byId("inpDescricao");
+                    oInput3.setValue("");
                 }.bind(this),
                 error: function (oError) {
                     debugger

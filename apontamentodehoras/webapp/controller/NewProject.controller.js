@@ -42,6 +42,12 @@ sap.ui.define([
             oModel.create("/ProjetoSet", dados, {
                 success: function (oDados, resposta) {
                     MessageToast.show('Funcionário criado com sucesso!!');
+                    var oInput1 = this.getView().byId("inpNome");
+                    oInput1.setValue("");
+                    var oInput2 = this.getView().byId("inpCliname");
+                    oInput2.setValue("");
+                    var oInput3 = this.getView().byId("inpFuncid");
+                    oInput3.setValue("");
                     history.go(-1);
                 }.bind(this),
                 error: function (oError) {

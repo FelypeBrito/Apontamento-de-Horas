@@ -43,6 +43,8 @@ sap.ui.define([
             oModel.create("/Cliente1Set", dados, {
                 success: function (oDados, resposta) {
                     MessageToast.show('Cliente criado com sucesso!!');
+                    var oInput1 = this.getView().byId("inpNome");
+                            oInput1.setValue("");
                     history.go(-1);
                 }.bind(this),
                 error: function (oError) {
