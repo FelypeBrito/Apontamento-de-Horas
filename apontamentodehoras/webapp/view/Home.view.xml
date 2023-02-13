@@ -5,27 +5,20 @@
     xmlns:l="sap.ui.layout"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:semantic="sap.f.semantic">
-
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false">
-
         <semantic:titleHeading>
             <Title
                 text="Clientes"
                 level="H2"/>
         </semantic:titleHeading>
-
         <semantic:headerContent>
-           <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
-
-           <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
-           
+            <Button  text = "Apontar" press = ".onApontar"  class="sapUiSmallMarginEnd"/>
+            <Button  text = "Novo Projeto" press = ".onProjeto"  class="sapUiSmallMarginEnd"/>
         </semantic:headerContent>
-
         <semantic:content>
-
             <Table
                 id="table"
                 width="auto"
@@ -41,12 +34,10 @@
                 growing="true"
                 growingScrollToLoad="true"
                 updateFinished=".onUpdateFinished">
-
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title/>
                         <ToolbarSpacer />
-                                             
                         <SearchField
                             id="searchField"
                             tooltip="{i18n>worklistSearchTooltip}"
@@ -58,9 +49,7 @@
                             </layoutData>
                         </SearchField>
                     </OverflowToolbar>
-                    
                 </headerToolbar>
-
                 <columns>
                     <Column id="nameColumn">
                         <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
@@ -69,7 +58,6 @@
                         <Text text="ID" id="unitNumberColumnTitle"/>
                     </Column>
                 </columns>
-
                 <items>
                     <ColumnListItem
                         id= "colunClin"
@@ -79,15 +67,11 @@
                             <ObjectIdentifier id="nomeClin"
                                 title="{Nome}"/>
                             <ObjectNumber
-                                unit="{Clinid}" />     
+                                unit="{Clinid}" />
                         </cells>
-                        
                     </ColumnListItem>
                 </items>
-
             </Table>
         </semantic:content>
-
     </semantic:SemanticPage>
-
 </mvc:View>

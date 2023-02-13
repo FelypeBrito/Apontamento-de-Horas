@@ -5,29 +5,22 @@
     xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
-
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false"
         busy="{funcionariosView>/busy}"
         busyIndicatorDelay="{funcionariosView>/delay}">
-
         <semantic:titleHeading>
             <Title
                 text="Horas Trabalhadas"
                 level="H2"/>
-
         </semantic:titleHeading>
-
         <semantic:headerContent>
-           <Button  text = "Exportar Excel" press = ".onExport"/>
-        
+            <Button  text = "Exportar Excel" press = ".onExport"/>
         </semantic:headerContent>
-
         <l:VerticalLayout width="100%">
-   
-        <Table 
+            <Table 
             id="idNoteTable"
             width= "auto"
             mode = "Delete"
@@ -35,52 +28,47 @@
 			items="{
 				path: '/HorasTrabalhadasSet'
 			}">
-			<columns>
-				<Column>
-					<Text text="Data" />
-				</Column>
-                <Column>
-					<Text text="Consultor" />
-				</Column>
-                <Column>
-					<Text text="Projeto" />
-				</Column>
-                <Column>
-					<Text text="Atividade" />
-				</Column>
-				<Column>
-					<Text text="Horário de entrada" />
-				</Column>
-
-				<Column>
-					<Text text="Horário de Saída" />
-				</Column>
-                <Column>
-					<Text text="Horas Trabalhadas" />
-				</Column>
-			</columns>
-				<ColumnListItem  >
-					<ObjectIdentifier
+                <columns>
+                    <Column>
+                        <Text text="Data" />
+                    </Column>
+                    <Column>
+                        <Text text="Consultor" />
+                    </Column>
+                    <Column>
+                        <Text text="Projeto" />
+                    </Column>
+                    <Column>
+                        <Text text="Atividade" />
+                    </Column>
+                    <Column>
+                        <Text text="Horário de entrada" />
+                    </Column>
+                    <Column>
+                        <Text text="Horário de Saída" />
+                    </Column>
+                    <Column>
+                        <Text text="Horas Trabalhadas" />
+                    </Column>
+                </columns>
+                <ColumnListItem  >
+                    <ObjectIdentifier
                    
 						text="{Data}"/>
-                        <ObjectAttribute
+                    <ObjectAttribute
 						text="{Nome}"/>
-                        <ObjectAttribute
+                    <ObjectAttribute
 						text="{Projname}"/>
-					<ObjectAttribute
+                    <ObjectAttribute
 						text="{Atividade}"/>
-                        <ObjectAttribute
+                    <ObjectAttribute
 						text="{Hentrada}"/>
-                        <ObjectAttribute
+                    <ObjectAttribute
 						text="{Hsaida}"/>
-					<ObjectAttribute
+                    <ObjectAttribute
 						text="{Htotal}"/>
-				</ColumnListItem>
-		</Table>
-</l:VerticalLayout>
-
+                </ColumnListItem>
+            </Table>
+        </l:VerticalLayout>
     </semantic:SemanticPage>
-
 </mvc:View>
-
-  

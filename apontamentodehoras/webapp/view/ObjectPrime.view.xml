@@ -5,56 +5,46 @@
     xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
-
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false"
         busy="{objectView>/busy}"
         busyIndicatorDelay="{objectView>/delay}">
-
         <semantic:titleHeading>
             <Title
                 text="Projetos"
                 level="H2"/>
         </semantic:titleHeading>
-
         <semantic:headerContent>
         </semantic:headerContent>
-
         <l:VerticalLayout width="100%">
-        
-   <Table id="idProductsTable"
+            <Table id="idProductsTable"
             mode = "Delete"
             delete = "onProjetoDelete"
             width= "auto"
 			items="{
 				path: '/ProjetoSet' 
 			}">
-			<columns>
+                <columns>
                     <Column >
                         <Text text="Nome" />
                     </Column>
                     <Column hAlign="End">
                         <Text text="Funcionário" />
                     </Column>
-                   
                 </columns>
-		
-				<ColumnListItem
+                <ColumnListItem
                         type="Navigation"
                         press=".onPress">
-                        <cells>
-                            <ObjectIdentifier
+                    <cells>
+                        <ObjectIdentifier
                                 title="{Nome}"/>
-                                <ObjectNumber
-                                unit="{Funcname}" />     
-                      
-                        </cells>
-                       
-				</ColumnListItem>
-		</Table>
-</l:VerticalLayout>
-
+                        <ObjectNumber
+                                unit="{Funcname}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </l:VerticalLayout>
     </semantic:SemanticPage>
 </mvc:View>

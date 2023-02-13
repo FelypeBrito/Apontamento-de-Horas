@@ -7,13 +7,11 @@
     xmlns:l="sap.ui.layout"
      xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc">
-
-                    <Page
+    <Page
                         title="Criar novo Funcionário"
                         floatingFooter="true"
                         >
-
-                        <f:SimpleForm
+        <f:SimpleForm
                             editable="true"
                             layout="ResponsiveGridLayout"
                             labelSpanXL="3"
@@ -29,33 +27,24 @@
                             columnsL="1"
                             columnsM="1"
                             singleContainerFullSize="false">
-
-                            
-
-                            <Label text="Nome"  required= "true"/>
-                            <Input valueLiveUpdate="true" id="inpNome"  
+            <Label text="Nome"  required= "true"/>
+            <Input valueLiveUpdate="true" id="inpNome"  
                             value=""
                             maxLength="40"/>
-
-                            <Label text="Telefone"  required= "true" />
-                            <Input value="" id="inpTelefone"/>
-
-                            <Label text="E-mail" required= "true" />
-                            <Input value="" id="inpEmail"/>
-
-                            <Label text="Senha"  required= "true"/>
-                            <Input value="" id="inpSenha"  type="Password" />
-
-                            <Label text="Permissão"  />
-                            <VBox class="sapUiMediumMarginEnd">
-                            <CheckBox  id = "inpPermissao"/>
-			                </VBox>
-                           
-                        </f:SimpleForm>
-                       <Toolbar class="sapUiSmallMarginBottom">
-                            <Button  text="Gravar" press="onGravar" />
-                            <Button  text="Cancelar" press="onCancelar "  />
-			            </Toolbar>
-                       
-                    </Page>
+            <Label text="Telefone"  required= "true" />
+            <Input value="" id="inpTelefone"/>
+            <Label text="E-mail" required= "true" />
+            <Input value="" id="inpEmail"/>
+            <Label text="Senha"  required= "true"/>
+            <Input value="" id="inpSenha"  type="Password" />
+            <Label text="Permissão"  />
+            <VBox class="sapUiMediumMarginEnd">
+                <CheckBox  id = "inpPermissao"/>
+            </VBox>
+        </f:SimpleForm>
+        <Toolbar class="sapUiSmallMarginBottom">
+            <Button  text="Gravar" press="onGravar" />
+            <Button  text="Cancelar" press="onCancelar "  />
+        </Toolbar>
+    </Page>
 </mvc:View>

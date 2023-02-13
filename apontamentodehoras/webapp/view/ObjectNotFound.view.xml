@@ -2,7 +2,6 @@
     controllerName="apontamento.apontamentodehoras.controller.NotFound"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">
-
     <MessagePage
         title="{i18n>objectTitle}"
         text="{i18n>noObjectFoundText}"
@@ -13,5 +12,4 @@
             <Link id="link" text="{i18n>backToWorklist}" press=".onLinkPressed" />
         </customDescription>
     </MessagePage>
-
 </mvc:View>

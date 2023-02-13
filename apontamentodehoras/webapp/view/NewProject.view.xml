@@ -7,13 +7,11 @@
     xmlns:l="sap.ui.layout"
      xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc">
-
-                    <Page
+    <Page
                         title="Criar novo Projeto"
                         floatingFooter="true"
                         >
-
-                        <f:SimpleForm
+        <f:SimpleForm
                             editable="true"
                             layout="ResponsiveGridLayout"
                             labelSpanXL="3"
@@ -29,86 +27,67 @@
                             columnsL="1"
                             columnsM="1"
                             singleContainerFullSize="false">
-
-                            
-
-                            <Label text="Nome do Projeto"  required= "true"/>
-                            <Input valueLiveUpdate="true" id="inpNome"  
+            <Label text="Nome do Projeto"  required= "true"/>
+            <Input valueLiveUpdate="true" id="inpNome"  
                             value=""
                             maxLength="40"/>
-
-                            <Label text="Nome do Cliente"  required= "true" />
-                            <Input value="" id="inpCliname"/>
-
-                            <Label text="ID Funcionário" required= "true" />
-                            <Input value="" id="inpFuncid"/>
-
-                    
-                        </f:SimpleForm>
-                        
-                       <Toolbar class="sapUiSmallMarginBottom">
-                            <Button  text="Gravar" press="onGravar" />
-                            <Button  text="Cancelar" press="onCancelar "  />
-			            </Toolbar>
-
-
-                        <Table class="sapUiSmallMarginBottom"
+            <Label text="Nome do Cliente"  required= "true" />
+            <Input value="" id="inpCliname"/>
+            <Label text="ID Funcionário" required= "true" />
+            <Input value="" id="inpFuncid"/>
+        </f:SimpleForm>
+        <Toolbar class="sapUiSmallMarginBottom">
+            <Button  text="Gravar" press="onGravar" />
+            <Button  text="Cancelar" press="onCancelar "  />
+        </Toolbar>
+        <Table class="sapUiSmallMarginBottom"
                          id="idProductsTable"
                         width= "auto"
 			            items="{
 				                path: '/FuncionarioSet' 
 			                    }">
-			            <columns>
-                            <Column >
-                                <Text text="Funcionários" />
-                            </Column>
-                            <Column hAlign="End">
-                                <Text text="ID" />
-                            </Column>
-                   
-                        </columns>
-		
-				                <ColumnListItem
+            <columns>
+                <Column >
+                    <Text text="Funcionários" />
+                </Column>
+                <Column hAlign="End">
+                    <Text text="ID" />
+                </Column>
+            </columns>
+            <ColumnListItem
                                     type="Navigation"
                                     press=".onPress">
-                                    <cells>
-                                        <ObjectIdentifier
+                <cells>
+                    <ObjectIdentifier
                                             title="{Nome}"/>
-                                            <ObjectNumber
-                                            unit="{Funcid}" />     
-                                
-                                        </cells>
-                                    
-                                </ColumnListItem>
-                        </Table>
-
-                        <Table id="idClintable"
+                    <ObjectNumber
+                                            unit="{Funcid}" />
+                </cells>
+            </ColumnListItem>
+        </Table>
+        <Table id="idClintable"
                         width= "auto"
 			            items="{
 				                path: '/ClienteAllSet' 
 			                    }">
-			            <columns>
-                            <Column >
-                                <Text text="Clientes" />
-                            </Column>
-                            <Column hAlign="End">
-                                <Text text="ID" />
-                            </Column>
-                   
-                        </columns>
-		
-				                <ColumnListItem
+            <columns>
+                <Column >
+                    <Text text="Clientes" />
+                </Column>
+                <Column hAlign="End">
+                    <Text text="ID" />
+                </Column>
+            </columns>
+            <ColumnListItem
                                     type="Navigation"
                                     press=".onPress">
-                                    <cells>
-                                        <ObjectIdentifier
+                <cells>
+                    <ObjectIdentifier
                                             title="{Nome}"/>
-                                            <ObjectNumber
-                                            unit="{Clinid}" />     
-                                
-                                        </cells>
-                                    
-                                </ColumnListItem>
-                        </Table>
-                    </Page>
+                    <ObjectNumber
+                                            unit="{Clinid}" />
+                </cells>
+            </ColumnListItem>
+        </Table>
+    </Page>
 </mvc:View>
